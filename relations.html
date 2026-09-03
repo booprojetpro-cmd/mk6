@@ -1,0 +1,303 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050505"><title>PROMET — Projet &amp; développement</title><meta name="description" content="Présentation du projet et du développement de Promet."><style>
+:root{--black:#050505;--ink:#111;--paper:#f5f2ec;--gold:#b18a52;--gold2:#d7b77c;--muted:#6f6a63;--line:rgba(17,17,17,.13);--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:#050505}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:#f6f3ee;color:var(--ink);-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}button,input,textarea,select{font:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.site-header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.94);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}.header-in{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{width:136px}.main-nav{display:flex;align-items:center;gap:22px}.main-nav a{color:#dedad3;text-decoration:none;font-size:14px;font-weight:720}.main-nav a:hover,.main-nav a.active{color:#fff}.account-btn{border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:7px;background:#f0ede6!important;color:#0a0a0a!important}.page-hero{position:relative;overflow:hidden;min-height:440px;background:#f5f2ec url('assets/marbre3.png') center/cover;color:#101010;display:flex;align-items:center}.page-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.94),rgba(255,255,255,.65) 58%,rgba(255,255,255,.28))}.page-hero.dark{background:#080808 url('assets/marbre2.png') center/cover;color:white}.page-hero.dark:before{background:rgba(0,0,0,.72)}.hero-inner{position:relative;z-index:1;padding:82px 0}.kicker{font-size:13px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#8b693b;margin:0 0 14px}.dark .kicker{color:#d7b77c}.page-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(46px,6vw,82px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:900px}.lead{font-size:clamp(18px,2vw,23px);line-height:1.5;color:#5b554e;max-width:760px;margin:24px 0 0}.dark .lead{color:#d0cbc3}.section{padding:74px 0}.section.alt{background:#fff url('assets/marbre.png') center/cover}.section.dark{background:#080808;color:white}.section h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,4vw,54px);letter-spacing:-.035em;margin:0 0 20px}.section p{font-size:17px;line-height:1.68;color:#5b554e}.section.dark p{color:#c7c2bb}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(255,255,255,.78);border:1px solid rgba(17,17,17,.12);border-radius:18px;padding:26px;box-shadow:0 16px 46px rgba(40,28,15,.07)}.dark .card{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.13);box-shadow:none}.card h3{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:1.1;margin:0 0 12px}.card p{margin:0;font-size:15px}.steps{display:grid;gap:12px}.step{display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:start;border-top:1px solid var(--line);padding:22px 0}.step-num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;font-weight:850}.step h3{margin:0 0 6px;font-size:21px}.step p{margin:0}.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 21px;border-radius:8px;border:1px solid #111;background:#111;color:white;text-decoration:none;font-weight:820;cursor:pointer}.btn.light{background:#efece5;color:#111;border-color:#d2ccc1}.btn.ghost{background:transparent;color:#111}.dark .btn.ghost{color:#fff;border-color:rgba(255,255,255,.4)}.form{display:grid;gap:14px;max-width:760px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field label{font-size:13px;font-weight:800;color:#4f4942}.field input,.field textarea,.field select{width:100%;border:1px solid rgba(17,17,17,.2);border-radius:8px;background:rgba(255,255,255,.88);min-height:50px;padding:12px 14px;outline:none}.field textarea{min-height:140px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#111;box-shadow:0 0 0 2px rgba(17,17,17,.08)}.fine{font-size:12px!important;color:#77716b!important}.notice{padding:16px 18px;border-left:3px solid var(--gold);background:rgba(177,138,82,.1);font-size:14px;line-height:1.55}.status{min-height:22px;margin-top:8px;font-size:14px;font-weight:700;color:#6f532d}.site-footer{background:#050505;color:#9f9b96;padding:48px 0 70px;border-top:1px solid rgba(255,255,255,.08)}.footer-top{font-size:16px;margin-bottom:30px}.footer-top a{color:#d0cbc4}.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 40px}.footer-grid a{display:block;color:#aaa6a0;font-size:14px;line-height:1.3;text-decoration:underline;text-underline-offset:2px;margin-bottom:14px}.footer-grid a:hover{color:white}.footer-note{font-size:13px;color:#74706b;margin-top:25px}.faq-list{display:grid;gap:10px}.faq-item{border:1px solid rgba(17,17,17,.14);border-radius:10px;background:rgba(255,255,255,.75);overflow:hidden}.faq-q{width:100%;border:0;background:transparent;text-align:left;padding:22px 24px;font-size:19px;font-weight:800;display:flex;justify-content:space-between;cursor:pointer}.faq-q span:last-child{font-size:28px;font-weight:300;transition:transform .2s}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}.faq-a p{padding:0 24px 22px;margin:0}.faq-item.open .faq-a{max-height:360px}.toggle-row{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line);padding:20px 0}.toggle{position:relative;width:50px;height:28px;border-radius:999px;background:#aaa;border:0;cursor:pointer;flex:none}.toggle:after{content:"";position:absolute;width:22px;height:22px;left:3px;top:3px;border-radius:50%;background:white;transition:.2s}.toggle.on{background:#111}.toggle.on:after{left:25px}.speed-card{text-align:center;padding:44px;border:1px solid rgba(17,17,17,.13);border-radius:20px;background:rgba(255,255,255,.82);max-width:760px}.speed-value{font-family:Georgia,"Times New Roman",serif;font-size:76px;letter-spacing:-.05em;margin:18px 0 4px}.speed-unit{font-weight:800;color:#6e685f}.progress-track{height:8px;background:#ddd7ce;border-radius:999px;overflow:hidden;margin:24px 0}.progress-bar{height:100%;width:0;background:#111;transition:width .2s}.catalogue{display:grid;grid-template-columns:repeat(5,1fr);gap:26px 18px}.book{display:flex;flex-direction:column;gap:12px}.book img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:10px;box-shadow:0 16px 42px rgba(0,0,0,.24)}.book h3{font-size:16px;margin:0}.book p{font-size:13px;margin:0;color:#77716a}.book .btn{min-height:42px;padding:0 12px;font-size:13px}.price-big{font-family:Georgia,"Times New Roman",serif;font-size:92px;line-height:.9}.pill{display:inline-block;border:1px solid rgba(17,17,17,.16);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;margin:4px 4px 0 0}.legal h2{font-family:inherit;font-size:24px;letter-spacing:0;margin-top:36px}.legal p,.legal li{font-size:16px;line-height:1.7;color:#5c5650}.legal ul{padding-left:22px}.quote{font-family:Georgia,"Times New Roman",serif;font-size:clamp(28px,4vw,48px);line-height:1.15;max-width:900px}.divider{height:1px;background:var(--line);margin:30px 0}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.catalogue{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}.main-nav a:nth-child(2){display:none}}
+@media(max-width:680px){.wrap{width:min(100% - 30px,var(--max))}.header-in{min-height:68px}.logo{width:116px}.main-nav{gap:10px}.main-nav a{font-size:12px}.main-nav a:nth-child(1),.main-nav a:nth-child(3){display:none}.page-hero{min-height:360px}.hero-inner{padding:58px 0}.section{padding:55px 0}.grid,.form-row{grid-template-columns:1fr}.catalogue{grid-template-columns:repeat(2,1fr);gap:22px 12px}.footer-grid{grid-template-columns:1fr}.speed-card{padding:26px 18px}.speed-value{font-size:60px}.price-big{font-size:70px}}
+
+/* --- PROMET · Relations / Projet & développement --- */
+.relations-page{background:#f7f4ee}
+.relations-hero{
+  position:relative;overflow:hidden;background:#050505;color:#fff;
+  min-height:620px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)
+}
+.relations-hero:before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 78% 30%,rgba(177,138,82,.20),transparent 28%),
+    radial-gradient(circle at 60% 90%,rgba(255,255,255,.055),transparent 34%),
+    linear-gradient(120deg,#050505 0%,#090909 56%,#0d0b08 100%);
+}
+.relations-hero:after{
+  content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;right:-70px;top:105px;box-shadow:0 0 0 80px rgba(255,255,255,.018),0 0 0 160px rgba(255,255,255,.012)
+}
+.relations-hero-grid{
+  position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) 360px;
+  gap:90px;align-items:center;padding:98px 0 104px
+}
+.relations-eyebrow{
+  font-size:12px;font-weight:850;letter-spacing:.20em;text-transform:uppercase;
+  color:#d7b77c;margin-bottom:20px
+}
+.relations-hero h1{
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(56px,7vw,96px);
+  line-height:.92;letter-spacing:-.055em;font-weight:500;margin:0;max-width:880px
+}
+.relations-hero h1 em{font-style:normal;color:#caa56f}
+.relations-hero-copy{
+  font-size:20px;line-height:1.58;color:#c7c2bb;max-width:740px;margin:30px 0 0
+}
+.solo-card{
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.055);
+  backdrop-filter:blur(14px);border-radius:18px;padding:28px 28px 30px;
+  box-shadow:0 28px 90px rgba(0,0,0,.32)
+}
+.solo-card .solo-label{
+  font-size:11px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#b6afa5
+}
+.solo-card .solo-number{
+  font-family:Georgia,"Times New Roman",serif;font-size:92px;line-height:.9;
+  letter-spacing:-.06em;margin:18px 0 10px;color:#fff
+}
+.solo-card strong{display:block;font-size:18px;color:#fff;margin-bottom:7px}
+.solo-card p{margin:0;color:#a8a39c;font-size:14px;line-height:1.55}
+.solo-divider{height:1px;background:rgba(255,255,255,.11);margin:23px 0}
+.solo-meta{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.solo-meta span{display:block;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#77736e;margin-bottom:5px}
+.solo-meta b{font-size:14px;color:#e8e4de}
+
+.relations-section{padding:100px 0;background:#fbfaf7}
+.relations-intro{display:grid;grid-template-columns:.75fr 1.25fr;gap:90px;align-items:start}
+.relations-kicker{
+  font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#8d6b3d;margin-bottom:18px
+}
+.relations-section h2{
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,5vw,68px);
+  line-height:.98;letter-spacing:-.045em;font-weight:500;margin:0
+}
+.relations-copy p{
+  margin:0 0 20px;font-size:18px;line-height:1.72;color:#575149
+}
+.relations-copy strong{color:#111}
+
+.principles{margin-top:78px;border-top:1px solid rgba(17,17,17,.14)}
+.principle{
+  display:grid;grid-template-columns:150px 1fr 1fr;gap:44px;align-items:start;
+  padding:34px 0;border-bottom:1px solid rgba(17,17,17,.12)
+}
+.principle-index{
+  font-family:Georgia,"Times New Roman",serif;font-size:38px;letter-spacing:-.04em;color:#b18a52
+}
+.principle h3{margin:4px 0 0;font-size:20px;letter-spacing:-.015em}
+.principle p{margin:0;font-size:15px;line-height:1.65;color:#6d675f}
+
+.founder-section{
+  position:relative;background:#0a0a0a;color:#fff;padding:105px 0;overflow:hidden
+}
+.founder-section:before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(255,255,255,.025),transparent 40%),
+             radial-gradient(circle at 88% 18%,rgba(177,138,82,.16),transparent 26%)
+}
+.founder-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:86px;align-items:center}
+.founder-section h2{
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,5vw,72px);
+  line-height:.97;letter-spacing:-.048em;font-weight:500;margin:0 0 24px
+}
+.founder-section p{font-size:17px;line-height:1.72;color:#bcb7af;margin:0 0 18px}
+.founder-signature{
+  border-left:1px solid rgba(255,255,255,.18);padding-left:44px
+}
+.founder-signature .name{
+  font-family:Georgia,"Times New Roman",serif;font-size:42px;letter-spacing:-.035em
+}
+.founder-signature .role{
+  margin-top:9px;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#d0a96f
+}
+.founder-signature .facts{
+  display:grid;gap:0;margin-top:34px;border-top:1px solid rgba(255,255,255,.11)
+}
+.founder-fact{
+  display:flex;justify-content:space-between;gap:28px;padding:17px 0;
+  border-bottom:1px solid rgba(255,255,255,.09);font-size:14px
+}
+.founder-fact span{color:#77736d}
+.founder-fact strong{font-weight:750;text-align:right;color:#e8e4de}
+
+.roadmap-section{padding:98px 0;background:#f2eee6}
+.roadmap-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:54px}
+.roadmap-head h2{
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,5vw,68px);
+  line-height:.98;letter-spacing:-.045em;font-weight:500;margin:0
+}
+.roadmap-head p{max-width:530px;margin:0;color:#675f56;line-height:1.65;font-size:16px}
+.roadmap-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(17,17,17,.14);border-left:1px solid rgba(17,17,17,.14)}
+.roadmap-item{
+  min-height:280px;padding:28px 24px;border-right:1px solid rgba(17,17,17,.14);
+  border-bottom:1px solid rgba(17,17,17,.14);background:rgba(255,255,255,.35)
+}
+.roadmap-item .roadmap-num{font-size:11px;font-weight:900;letter-spacing:.17em;color:#9a7441}
+.roadmap-item h3{
+  font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.08;
+  letter-spacing:-.025em;margin:70px 0 13px
+}
+.roadmap-item p{font-size:14px;line-height:1.6;color:#69635b;margin:0}
+
+.relations-cta{
+  background:#fff;padding:82px 0 92px;text-align:center;border-top:1px solid rgba(17,17,17,.08)
+}
+.relations-cta h2{
+  font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,5vw,64px);
+  line-height:1;letter-spacing:-.045em;font-weight:500;margin:0 auto 18px;max-width:820px
+}
+.relations-cta p{max-width:670px;margin:0 auto 30px;color:#686158;font-size:16px;line-height:1.65}
+.relations-cta a{
+  display:inline-flex;min-height:52px;padding:0 24px;align-items:center;justify-content:center;
+  background:#0b0b0b;color:#fff;text-decoration:none;border-radius:7px;font-size:13px;font-weight:850
+}
+
+@media(max-width:980px){
+  .relations-hero-grid{grid-template-columns:1fr;gap:50px}
+  .solo-card{max-width:480px}
+  .relations-intro,.founder-grid{grid-template-columns:1fr;gap:42px}
+  .principle{grid-template-columns:90px 1fr;gap:24px}
+  .principle p{grid-column:2}
+  .roadmap-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  .relations-hero{min-height:auto}
+  .relations-hero-grid{padding:70px 0 74px;gap:38px}
+  .relations-hero h1{font-size:clamp(50px,15vw,68px)}
+  .relations-hero-copy{font-size:17px}
+  .solo-card{padding:24px}
+  .solo-card .solo-number{font-size:72px}
+  .relations-section,.founder-section,.roadmap-section{padding:72px 0}
+  .principle{grid-template-columns:58px 1fr;gap:18px}
+  .principle-index{font-size:30px}
+  .founder-signature{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.14);padding-top:34px}
+  .roadmap-head{display:block}
+  .roadmap-head p{margin-top:18px}
+  .roadmap-grid{grid-template-columns:1fr}
+  .roadmap-item{min-height:220px}
+  .roadmap-item h3{margin-top:44px}
+}
+
+</style></head><body><header class="site-header"><div class="wrap header-in"><a href="index.html" aria-label="Promet — accueil"><img class="logo" src="assets/promet.png" alt="PROMET"></a><nav class="main-nav" aria-label="Navigation principale"><a href="catalogue.html">Catalogue</a><a href="tarif.html">Tarif</a><a href="faire-un-don.html">Faire un don</a><a class="account-btn" href="compte.html">S'identifier</a></nav></div></header><main class="relations-page">
+<section class="relations-hero">
+  <div class="wrap relations-hero-grid">
+    <div>
+      <div class="relations-eyebrow">PROMET · Projet & développement</div>
+      <h1>Une vision.<br><em>Une seule direction.</em></h1>
+      <p class="relations-hero-copy">PROMET n’est pas une structure éclatée entre associés, comités ou partenaires opérationnels. Le projet est construit, dirigé et développé par une seule personne, avec une ligne éditoriale et produit volontairement cohérente.</p>
+    </div>
+    <aside class="solo-card" aria-label="Structure de PROMET">
+      <div class="solo-label">Structure aujourd’hui</div>
+      <div class="solo-number">1</div>
+      <strong>personne aux commandes.</strong>
+      <p>Une entreprise individuelle, sans associé et sans partenaire opérationnel dans la direction de PROMET.</p>
+      <div class="solo-divider"></div>
+      <div class="solo-meta">
+        <div><span>Structure</span><b>Entreprise individuelle</b></div>
+        <div><span>Direction</span><b>Indépendante</b></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="relations-section">
+  <div class="wrap">
+    <div class="relations-intro">
+      <div>
+        <div class="relations-kicker">Pourquoi ce choix</div>
+        <h2>Construire sans diluer la vision.</h2>
+      </div>
+      <div class="relations-copy">
+        <p>PROMET repose sur une idée simple : <strong>un produit culturel fort doit avoir une direction claire</strong>. La sélection des livres, le design, la technologie, la tarification, la marque et l’expérience de lecture avancent donc dans la même direction.</p>
+        <p>Il n’existe pas aujourd’hui d’équipe dirigeante parallèle, d’associé qui arbitre la stratégie ou de partenaire ayant un pouvoir de décision sur le produit. Les décisions sont prises rapidement, assumées directement et exécutées sans couches inutiles.</p>
+        <p>Cette structure légère permet de conserver une identité forte tout en faisant évoluer PROMET à mesure que le catalogue, l’audience et les besoins du produit grandissent.</p>
+      </div>
+    </div>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-index">01</div>
+        <h3>Direction unique</h3>
+        <p>Une seule vision produit et éditoriale. Les arbitrages sont rapides et la cohérence de marque ne dépend pas d’un compromis entre plusieurs décideurs.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-index">02</div>
+        <h3>Exécution directe</h3>
+        <p>Le développement, les choix d’interface, la structuration du catalogue, la monétisation et les évolutions du service sont pilotés au même endroit.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-index">03</div>
+        <h3>Coûts maîtrisés</h3>
+        <p>Une structure volontairement légère limite les frais fixes et permet de concentrer les ressources sur le produit, les ouvrages et l’acquisition.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-index">04</div>
+        <h3>Responsabilité claire</h3>
+        <p>Pas de dilution des responsabilités : les décisions stratégiques, l’expérience proposée aux lecteurs et la trajectoire de PROMET sont assumées directement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder-section">
+  <div class="wrap founder-grid">
+    <div>
+      <div class="relations-kicker">Le fondateur</div>
+      <h2>PROMET est un projet personnel devenu une entreprise.</h2>
+      <p>L’ambition n’est pas de reproduire une plateforme généraliste de plus. PROMET est pensé comme une bibliothèque numérique identifiable immédiatement : grands textes, éditions visuelles fortes, lecture et audio réunis dans une expérience unique.</p>
+      <p>Le projet se développe donc avec une logique de propriétaire-opérateur : construire le produit, comprendre directement les usages et renforcer ce qui crée le plus de valeur pour les lecteurs.</p>
+    </div>
+    <div class="founder-signature">
+      <div class="name">Oscar Sander</div>
+      <div class="role">Fondateur · Direction de PROMET</div>
+      <div class="facts">
+        <div class="founder-fact"><span>Entreprise</span><strong>AERIX · Entreprise individuelle</strong></div>
+        <div class="founder-fact"><span>Projet exploité</span><strong>PROMET</strong></div>
+        <div class="founder-fact"><span>Associés</span><strong>Aucun</strong></div>
+        <div class="founder-fact"><span>Partenaires décisionnels</span><strong>Aucun</strong></div>
+        <div class="founder-fact"><span>Direction produit</span><strong>Interne et indépendante</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roadmap-section">
+  <div class="wrap">
+    <div class="roadmap-head">
+      <div>
+        <div class="relations-kicker">Ce qui est construit</div>
+        <h2>Une entreprise légère.<br>Un produit ambitieux.</h2>
+      </div>
+      <p>La structure reste volontairement simple, mais le périmètre de PROMET est large : catalogue, édition, audio, produit web, expérience membre et distribution.</p>
+    </div>
+    <div class="roadmap-grid">
+      <article class="roadmap-item">
+        <div class="roadmap-num">01 · CATALOGUE</div>
+        <h3>Constituer une bibliothèque forte.</h3>
+        <p>Sélection, classement, métadonnées, couvertures et intégration d’ouvrages à forte valeur culturelle.</p>
+      </article>
+      <article class="roadmap-item">
+        <div class="roadmap-num">02 · ÉDITIONS</div>
+        <h3>Créer une identité éditoriale.</h3>
+        <p>Donner aux œuvres une présentation cohérente et immédiatement reconnaissable comme une édition PROMET.</p>
+      </article>
+      <article class="roadmap-item">
+        <div class="roadmap-num">03 · PRODUIT</div>
+        <h3>Faire évoluer l’expérience.</h3>
+        <p>Lecture, audio, bibliothèque personnelle, progression, gamification et outils de découverte réunis dans le même produit.</p>
+      </article>
+      <article class="roadmap-item">
+        <div class="roadmap-num">04 · CROISSANCE</div>
+        <h3>Développer sans perdre l’identité.</h3>
+        <p>Faire grandir la distribution, l’acquisition et les revenus tout en conservant une direction produit centralisée.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="relations-cta">
+  <div class="wrap">
+    <h2>Une direction simple à comprendre.</h2>
+    <p>PROMET est aujourd’hui indépendant, sans associé et sans partenaire opérationnel. Pour toute demande professionnelle, éditoriale ou stratégique, le contact se fait directement avec l’entreprise.</p>
+    <a href="nous-contacter.html">Contacter PROMET</a>
+  </div>
+</section>
+</main><footer class="site-footer"><div class="wrap"><div class="footer-top">Des questions ? <a href="nous-contacter.html">Nous contacter</a></div><div class="footer-grid"><div><a href="obtenir-gratuitement.html">Obtenir gratuitement</a><a href="faq.html">FAQ</a><a href="confidentialite.html">Confidentialité</a><a href="cookies.html">Préférences de cookies</a><a href="test-vitesse.html">Test de vitesse</a><a href="presse.html">Presse</a></div><div><a href="devenir-partenaire.html">Devenir partenaire</a><a href="affiliation.html">Affiliation</a><a href="devenir-auteur.html">Devenir auteur</a><a href="investir.html">Investir dans Promet</a><a href="relations.html">Notre projet &amp; développement</a><a href="seulement-chez-nous.html">Seulement chez nous</a></div><div><a href="tarif.html">Tarif</a><a href="mode-de-lecture.html">Modes de lecture</a><a href="telechargement.html">Téléchargement</a><a href="catalogue.html">Catalogue &amp; acheter des livres</a><a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a><a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a></div><div><a href="compte.html">Compte</a><a href="resilier.html">Résilier</a><a href="retractation.html">Rétractation</a><a href="mentions-legales.html">Mentions légales</a><a href="nous-contacter.html">Nous contacter</a><a href="conditions-utilisation.html">Conditions d&#x27;utilisation</a></div></div><div class="footer-note">Promet France · © 2026 Promet.</div></div></footer>
+<script>
+(()=>{const forms=document.querySelectorAll('[data-demo-form]');forms.forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const s=f.querySelector('.status');if(s)s.textContent=f.dataset.success||'Demande enregistrée dans cette démonstration.';}));document.querySelectorAll('[data-toast]').forEach(b=>b.addEventListener('click',()=>{const s=document.getElementById('pageStatus');if(s)s.textContent=b.dataset.toast||'Action enregistrée dans cette démonstration.';}));})();
+</script>
+</body></html>
