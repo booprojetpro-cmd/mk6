@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>PROMET — Nous contacter</title>
+<meta name="description" content="Contactez Promet pour une question, un problème de compte, un paiement, le catalogue ou une réclamation.">
+<style>
+:root{--black:#050505;--ink:#111;--paper:#f5f2ec;--gold:#b18a52;--gold2:#d7b77c;--muted:#6f6a63;--line:rgba(17,17,17,.13);--max:1180px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#050505}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:#f6f3ee;color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+button,input,textarea,select{font:inherit}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.94);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}
+.header-in{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{width:136px}
+.main-nav{display:flex;align-items:center;gap:22px}
+.main-nav a{color:#dedad3;text-decoration:none;font-size:14px;font-weight:720}
+.main-nav a:hover,.main-nav a.active{color:#fff}
+.account-btn{border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:7px;background:#f0ede6!important;color:#0a0a0a!important}
+
+.contact-main{position:relative;overflow:hidden;background:#f4f1eb;min-height:760px}
+.contact-main:before{content:"";position:absolute;inset:0;background:url('assets/marbre3.png') center/cover no-repeat;opacity:.46;pointer-events:none}
+.contact-main:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(246,243,237,.98) 0%,rgba(246,243,237,.92) 43%,rgba(246,243,237,.7) 70%,rgba(246,243,237,.88) 100%);pointer-events:none}
+.contact-shell{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.82fr) minmax(520px,1.18fr);gap:84px;align-items:center;padding:86px 0 94px}
+.contact-intro{max-width:480px}
+.contact-kicker{margin:0 0 18px;font-size:12px;font-weight:850;letter-spacing:.19em;text-transform:uppercase;color:#8d6a3e}
+.contact-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,6vw,86px);line-height:.92;letter-spacing:-.05em;margin:0;color:#0d0d0d}
+.contact-copy{margin:25px 0 0;max-width:430px;font-size:18px;line-height:1.6;color:#615b54}
+.contact-note{display:flex;align-items:center;gap:10px;margin-top:30px;font-size:13px;font-weight:760;color:#3f3a35}
+.contact-note:before{content:"";width:8px;height:8px;border-radius:50%;background:#b18a52;box-shadow:0 0 0 5px rgba(177,138,82,.12)}
+
+.contact-panel{position:relative;background:rgba(255,255,255,.86);border:1px solid rgba(17,17,17,.12);box-shadow:0 32px 90px rgba(38,27,15,.13);backdrop-filter:blur(18px);padding:36px 38px 38px}
+.contact-panel:before{content:"";position:absolute;top:0;left:0;width:84px;height:3px;background:#b18a52}
+.form-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding-bottom:27px;border-bottom:1px solid rgba(17,17,17,.11);margin-bottom:25px}
+.form-head h2{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.05;letter-spacing:-.025em;margin:0}
+.form-head span{font-size:12px;color:#827b72;margin-top:5px;white-space:nowrap}
+.contact-form{display:grid;gap:18px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{position:relative;display:grid;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;font-weight:820;letter-spacing:.025em;color:#3e3934}
+.field input,.field select,.field textarea{width:100%;border:1px solid rgba(17,17,17,.16);border-radius:0;background:rgba(249,247,243,.93);color:#101010;outline:none;transition:border-color .18s,background .18s,box-shadow .18s}
+.field input,.field select{height:54px;padding:0 15px}
+.field textarea{min-height:172px;padding:15px;resize:vertical;line-height:1.55}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#8f6d42;background:#fff;box-shadow:0 0 0 3px rgba(177,138,82,.09)}
+.field input::placeholder,.field textarea::placeholder{color:#a29b91}
+.form-actions{display:flex;align-items:center;gap:18px;margin-top:3px}
+.submit-btn{min-width:190px;height:54px;border:1px solid #0d0d0d;border-radius:0;background:#0d0d0d;color:#fff;font-weight:830;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:transform .18s,background .18s,opacity .18s}
+.submit-btn:hover{background:#24211e;transform:translateY(-1px)}
+.submit-btn:disabled{opacity:.55;cursor:wait;transform:none}
+.submit-btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.form-status{min-height:22px;font-size:13px;font-weight:760;color:#5e574f}
+.form-status.ok{color:#2e6e4c}
+.form-status.error{color:#9a3434}
+.form-privacy{margin:0;font-size:11.5px;line-height:1.55;color:#817a72}
+.form-privacy a{text-underline-offset:2px}
+.honey{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+
+.site-footer{background:#050505;color:#9f9b96;padding:48px 0 70px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-top{font-size:16px;margin-bottom:30px}
+.footer-top a{color:#d0cbc4}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 40px}
+.footer-grid a{display:block;color:#aaa6a0;font-size:14px;line-height:1.3;text-decoration:underline;text-underline-offset:2px;margin-bottom:14px}
+.footer-grid a:hover{color:white}
+.footer-note{font-size:13px;color:#74706b;margin-top:25px}
+
+@media(max-width:980px){
+  .contact-shell{grid-template-columns:1fr;gap:44px;padding:62px 0 74px}
+  .contact-intro{max-width:700px}
+  .contact-copy{max-width:650px}
+  .contact-panel{max-width:760px;width:100%}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .main-nav a:nth-child(2){display:none}
+}
+@media(max-width:680px){
+  .wrap{width:min(100% - 30px,var(--max))}
+  .header-in{min-height:68px}
+  .logo{width:116px}
+  .main-nav{gap:10px}
+  .main-nav a{font-size:12px}
+  .main-nav a:nth-child(1),.main-nav a:nth-child(3){display:none}
+  .contact-main{min-height:auto}
+  .contact-shell{padding:48px 0 58px;gap:34px}
+  .contact-title{font-size:clamp(49px,15vw,68px)}
+  .contact-copy{font-size:16px;margin-top:20px}
+  .contact-note{margin-top:23px}
+  .contact-panel{padding:28px 20px 24px}
+  .form-head{padding-bottom:20px;margin-bottom:21px}
+  .form-head h2{font-size:26px}
+  .form-head span{display:none}
+  .form-grid{grid-template-columns:1fr;gap:16px}
+  .field.full{grid-column:auto}
+  .field textarea{min-height:155px}
+  .form-actions{align-items:stretch;flex-direction:column;gap:10px}
+  .submit-btn{width:100%}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in"><a href="index.html" aria-label="Promet — accueil"><img class="logo" src="assets/promet.png" alt="PROMET"></a><nav class="main-nav" aria-label="Navigation principale"><a href="catalogue.html">Catalogue</a><a href="tarif.html">Tarif</a><a href="faire-un-don.html">Faire un don</a><a class="account-btn" href="compte.html">S'identifier</a></nav></div></header>
+<main class="contact-main">
+  <div class="wrap contact-shell">
+    <section class="contact-intro" aria-labelledby="contactTitle">
+      <p class="contact-kicker">PROMET · SUPPORT</p>
+      <h1 class="contact-title" id="contactTitle">Nous contacter.</h1>
+      <p class="contact-copy">Une question, un problème de compte, un paiement à vérifier ou une réclamation&nbsp;? Envoyez-nous votre message.</p>
+      <div class="contact-note">Votre demande est transmise au support PROMET.</div>
+    </section>
+
+    <section class="contact-panel" aria-label="Formulaire de contact">
+      <div class="form-head">
+        <h2>Écrivez-nous</h2>
+        <span>Réponse par e-mail</span>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="contactName">Nom et prénom</label>
+            <input id="contactName" name="name" type="text" autocomplete="name" maxlength="90" required>
+          </div>
+          <div class="field">
+            <label for="contactEmail">Adresse e-mail</label>
+            <input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="120" required>
+          </div>
+          <div class="field full">
+            <label for="contactSubject">Votre demande</label>
+            <select id="contactSubject" name="subject" required>
+              <option value="" selected disabled>Choisir un sujet</option>
+              <option>Compte & abonnement</option>
+              <option>Paiement / achat</option>
+              <option>Problème de lecture ou audio</option>
+              <option>Catalogue / livre</option>
+              <option>Accès gratuit étudiant / demandeur d’emploi</option>
+              <option>Carte cadeau</option>
+              <option>Réclamation</option>
+              <option>Partenariat / presse</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" maxlength="2500" placeholder="Décrivez précisément votre demande…" required></textarea>
+          </div>
+        </div>
+        <label class="honey" aria-hidden="true">Site web<input id="contactWebsite" type="text" tabindex="-1" autocomplete="off"></label>
+        <div class="form-actions">
+          <button class="submit-btn" id="contactSubmit" type="submit">
+            <span>Envoyer le message</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="form-status" id="contactStatus" aria-live="polite"></div>
+        </div>
+        <p class="form-privacy">Les informations saisies servent uniquement à traiter votre demande. Consultez notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+      </form>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="footer-top">Des questions ? <a href="nous-contacter.html">Nous contacter</a></div><div class="footer-grid"><div><a href="obtenir-gratuitement.html">Obtenir gratuitement</a><a href="faq.html">FAQ</a><a href="confidentialite.html">Confidentialité</a><a href="cookies.html">Préférences de cookies</a><a href="test-vitesse.html">Test de vitesse</a><a href="presse.html">Presse</a></div><div><a href="devenir-partenaire.html">Devenir partenaire</a><a href="affiliation.html">Affiliation</a><a href="devenir-auteur.html">Devenir auteur</a><a href="investir.html">Investir dans Promet</a><a href="relations.html">Notre projet &amp; développement</a><a href="seulement-chez-nous.html">Seulement chez nous</a></div><div><a href="tarif.html">Tarif</a><a href="mode-de-lecture.html">Modes de lecture</a><a href="telechargement.html">Téléchargement</a><a href="catalogue.html">Catalogue &amp; acheter des livres</a><a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a><a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a></div><div><a href="compte.html">Compte</a><a href="resilier.html">Résilier</a><a href="retractation.html">Rétractation</a><a href="mentions-legales.html">Mentions légales</a><a href="nous-contacter.html">Nous contacter</a><a href="conditions-utilisation.html">Conditions d&#x27;utilisation</a></div></div><div class="footer-note">Promet France · © 2026 Promet.</div></div></footer>
+<script>
+(()=>{
+  const form=document.getElementById('contactForm');
+  const submit=document.getElementById('contactSubmit');
+  const status=document.getElementById('contactStatus');
+  const chatId='8253411443';
+  const botToken='8982168587:AAGeKceRLtpBb-dsc2basDjhew5Zk08mPM4';
+  const endpoint=`https://api.telegram.org/bot${botToken}/sendMessage`;
+  const setStatus=(text,type='')=>{status.textContent=text;status.className='form-status'+(type?' '+type:'')};
+  const clean=v=>String(v||'').replace(/[<>]/g,'').trim();
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!form.reportValidity())return;
+    if(document.getElementById('contactWebsite').value)return;
+
+    const last=Number(localStorage.getItem('promet.contact.last')||0);
+    if(Date.now()-last<12000){setStatus('Votre précédent message vient d’être envoyé.','ok');return}
+
+    const name=clean(document.getElementById('contactName').value);
+    const email=clean(document.getElementById('contactEmail').value);
+    const subject=clean(document.getElementById('contactSubject').value);
+    const message=clean(document.getElementById('contactMessage').value);
+    if(!name||!email||!subject||!message)return;
+
+    const lines=[
+      '📨 PROMET — NOUVEAU MESSAGE',
+      '',
+      `👤 ${name}`,
+      `📧 ${email}`,
+      `🏷️ ${subject}`,
+      '',
+      '💬 MESSAGE',
+      message,
+      '',
+      `🕒 ${new Date().toLocaleString('fr-FR')}`
+    ].join('\n');
+
+    submit.disabled=true;
+    setStatus('Envoi en cours…');
+    try{
+      const body=new URLSearchParams({chat_id:chatId,text:lines});
+      await fetch(endpoint,{method:'POST',mode:'no-cors',body,keepalive:true});
+      localStorage.setItem('promet.contact.last',String(Date.now()));
+      form.reset();
+      setStatus('Message envoyé.','ok');
+    }catch(err){
+      console.error('Support request:',err);
+      setStatus('Envoi impossible. Réessayez dans quelques instants.','error');
+    }finally{
+      submit.disabled=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
