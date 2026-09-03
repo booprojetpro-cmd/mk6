@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>PROMET — Devenir auteur</title>
+<meta name="description" content="Proposer un manuscrit aux Éditions PROMET pour une sélection éditoriale et une éventuelle publication numérique et brochée.">
+<style>
+:root{--black:#050505;--ink:#111;--paper:#f5f2ec;--gold:#b18a52;--gold2:#d7b77c;--muted:#6f6a63;--line:rgba(17,17,17,.13);--max:1180px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#050505}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:#f6f3ee;color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{display:block;max-width:100%}button,input,textarea,select{font:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.94);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}
+.header-in{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{width:136px}
+.main-nav{display:flex;align-items:center;gap:22px}
+.main-nav a{color:#dedad3;text-decoration:none;font-size:14px;font-weight:720}
+.main-nav a:hover,.main-nav a.active{color:#fff}
+.account-btn{border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:7px;background:#f0ede6!important;color:#0a0a0a!important}
+.site-footer{background:#050505;color:#9f9b96;padding:48px 0 70px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-top{font-size:16px;margin-bottom:30px}
+.footer-top a{color:#d0cbc4}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 40px}
+.footer-grid a{display:block;color:#aaa6a0;font-size:14px;line-height:1.3;text-decoration:underline;text-underline-offset:2px;margin-bottom:14px}
+.footer-grid a:hover{color:white}
+.footer-note{font-size:13px;color:#74706b;margin-top:25px}
+
+/* Page auteur */
+.author-hero{position:relative;overflow:hidden;background:#070707;color:#fff;min-height:650px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.08)}
+.author-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 35%,rgba(177,138,82,.14),transparent 32%),linear-gradient(135deg,#050505 0%,#0a0a0a 58%,#111 100%)}
+.author-hero:after{content:"ÉDITIONS";position:absolute;right:-35px;bottom:-58px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(110px,18vw,260px);line-height:.8;letter-spacing:-.07em;color:rgba(255,255,255,.026);pointer-events:none;white-space:nowrap}
+.hero-content{position:relative;z-index:2;padding:105px 0 100px;max-width:960px}
+.eyebrow{margin:0 0 22px;color:var(--gold2);font-size:12px;font-weight:850;letter-spacing:.22em;text-transform:uppercase}
+.author-hero h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(52px,7vw,96px);line-height:.92;letter-spacing:-.052em;font-weight:500;max-width:920px}
+.author-hero h1 em{font-weight:400;color:#d8b77c}
+.hero-copy{max-width:680px;margin:30px 0 0;font-size:19px;line-height:1.62;color:#bbb6ae}
+.hero-rule{width:72px;height:1px;background:var(--gold);margin:34px 0 0}
+
+.promise{background:#f4f1eb;padding:86px 0 90px}
+.promise-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:80px;align-items:start;margin-bottom:62px}
+.section-tag{font-size:11px;font-weight:850;letter-spacing:.2em;text-transform:uppercase;color:#8a6738;padding-top:8px}
+.promise h2,.selection h2,.submit-title{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.045em}
+.promise h2{font-size:clamp(40px,5vw,68px);line-height:1.02;margin:0;max-width:780px}
+.promise-copy{font-size:18px;line-height:1.7;color:#625d56;margin:25px 0 0;max-width:700px}
+.formats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(17,17,17,.17);border-bottom:1px solid rgba(17,17,17,.17)}
+.format{padding:34px 34px 36px 0}
+.format+ .format{border-left:1px solid rgba(17,17,17,.17);padding-left:34px}
+.format-num{font-family:Georgia,"Times New Roman",serif;font-size:18px;color:#a47d48;margin-bottom:58px}
+.format h3{font-family:Georgia,"Times New Roman",serif;font-size:33px;font-weight:500;margin:0 0 12px;letter-spacing:-.025em}
+.format p{margin:0;color:#6b655e;line-height:1.65;font-size:15px;max-width:460px}
+
+.selection{background:#fff;padding:90px 0 92px}
+.selection-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
+.selection h2{font-size:clamp(42px,5vw,68px);line-height:1;margin:12px 0 23px}
+.selection-intro{font-size:18px;line-height:1.65;color:#666058;max-width:470px;margin:0}
+.selection-list{border-top:1px solid rgba(17,17,17,.15)}
+.selection-row{display:grid;grid-template-columns:54px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid rgba(17,17,17,.15)}
+.selection-row .n{font-family:Georgia,"Times New Roman",serif;color:#9d7847;font-size:17px;padding-top:3px}
+.selection-row h3{font-size:20px;margin:0 0 7px;letter-spacing:-.015em}
+.selection-row p{font-size:14px;line-height:1.62;color:#716b63;margin:0;max-width:560px}
+
+.submit{background:#080808;color:#fff;padding:92px 0 100px;position:relative;overflow:hidden}
+.submit:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 85%,rgba(177,138,82,.09),transparent 31%)}
+.submit-inner{position:relative;z-index:1;display:grid;grid-template-columns:.82fr 1.18fr;gap:90px;align-items:start}
+.submit-title{font-size:clamp(42px,5vw,70px);line-height:.98;margin:12px 0 24px}
+.submit-copy{font-size:16px;line-height:1.7;color:#aaa59e;max-width:430px;margin:0}
+.submit-note{margin-top:32px;padding-top:25px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;line-height:1.65;color:#77736e;max-width:430px}
+.author-form{display:grid;gap:16px;background:#f4f1eb;color:#111;padding:36px;border:1px solid rgba(255,255,255,.1)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:grid;gap:8px}
+.field label{font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#635d55}
+.field input,.field select,.field textarea{width:100%;border:1px solid #d1cbc1;background:#fff;color:#111;border-radius:0;outline:none;padding:14px 15px;transition:border-color .18s,box-shadow .18s}
+.field input,.field select{min-height:52px}
+.field textarea{min-height:150px;resize:vertical;line-height:1.5}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#8b693b;box-shadow:0 0 0 2px rgba(177,138,82,.12)}
+.upload{position:relative;border:1px dashed #b6aea3;background:#ece8e0;min-height:122px;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;cursor:pointer;transition:.18s}
+.upload:hover,.upload.drag{background:#e7e1d7;border-color:#8b693b}
+.upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.upload-icon{width:34px;height:34px;margin:0 auto 11px;display:grid;place-items:center;border:1px solid #aaa197;border-radius:50%;font-size:20px}
+.upload strong{display:block;font-size:14px}
+.upload small{display:block;font-size:12px;color:#756f67;margin-top:5px}
+.file-selected{margin-top:7px;font-size:12px;color:#6a4c25;font-weight:750;min-height:16px;word-break:break-all}
+.check{display:flex;gap:11px;align-items:flex-start;font-size:12px;line-height:1.55;color:#6b655e}
+.check input{margin-top:3px;accent-color:#111}
+.submit-btn{min-height:54px;border:0;background:#0a0a0a;color:#fff;font-weight:830;cursor:pointer;padding:0 22px;display:flex;align-items:center;justify-content:center;gap:9px;transition:transform .18s,background .18s}
+.submit-btn:hover{background:#1b1b1b;transform:translateY(-1px)}
+.submit-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.form-status{min-height:20px;font-size:13px;font-weight:700;line-height:1.5}
+.form-status.ok{color:#397144}.form-status.error{color:#a43e35}
+.honeypot{position:absolute!important;left:-10000px!important;opacity:0!important;pointer-events:none!important}
+
+@media(max-width:980px){
+  .footer-grid{grid-template-columns:repeat(2,1fr)}.main-nav a:nth-child(2){display:none}
+  .promise-head,.selection-grid,.submit-inner{grid-template-columns:1fr;gap:42px}
+  .promise-head{margin-bottom:45px}
+  .author-hero{min-height:590px}
+}
+@media(max-width:680px){
+  .wrap{width:min(100% - 30px,var(--max))}.header-in{min-height:68px}.logo{width:116px}.main-nav{gap:10px}.main-nav a{font-size:12px}.main-nav a:nth-child(1),.main-nav a:nth-child(3){display:none}.footer-grid{grid-template-columns:1fr}
+  .author-hero{min-height:535px}.hero-content{padding:78px 0 72px}.author-hero h1{font-size:clamp(48px,14vw,68px)}.hero-copy{font-size:16px;line-height:1.58}
+  .promise,.selection,.submit{padding:66px 0}
+  .formats{grid-template-columns:1fr}.format{padding:28px 0}.format+.format{border-left:0;border-top:1px solid rgba(17,17,17,.17);padding-left:0}.format-num{margin-bottom:28px}
+  .form-row{grid-template-columns:1fr}.author-form{padding:24px 18px}
+  .selection-row{grid-template-columns:38px 1fr;gap:14px}
+}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in"><a href="index.html" aria-label="Promet — accueil"><img class="logo" src="assets/promet.png" alt="PROMET"></a><nav class="main-nav" aria-label="Navigation principale"><a href="catalogue.html">Catalogue</a><a href="tarif.html">Tarif</a><a href="faire-un-don.html">Faire un don</a><a class="account-btn" href="compte.html">S'identifier</a></nav></div></header>
+<main>
+  <section class="author-hero">
+    <div class="wrap hero-content">
+      <p class="eyebrow">Éditions PROMET · Appel à manuscrits</p>
+      <h1>Votre livre mérite<br><em>d’être lu.</em></h1>
+      <p class="hero-copy">Éditions PROMET étudie les manuscrits qui peuvent rejoindre son univers éditorial. Une œuvre retenue peut être publiée en version numérique dans l’application PROMET et développée en édition brochée.</p>
+      <div class="hero-rule"></div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="wrap">
+      <div class="promise-head">
+        <div class="section-tag">Ce que nous proposons</div>
+        <div>
+          <h2>Une édition pensée pour exister sur écran comme sur papier.</h2>
+          <p class="promise-copy">PROMET ne cherche pas à publier tout ce qui lui est envoyé. Chaque projet passe d’abord par une lecture de sélection afin de vérifier sa qualité, sa cohérence et sa place dans la ligne éditoriale.</p>
+        </div>
+      </div>
+      <div class="formats">
+        <article class="format">
+          <div class="format-num">01</div>
+          <h3>Édition numérique</h3>
+          <p>Le livre peut intégrer l’application PROMET avec une présentation éditoriale cohérente avec la bibliothèque, une fiche dédiée et une expérience de lecture conçue pour le numérique.</p>
+        </article>
+        <article class="format">
+          <div class="format-num">02</div>
+          <h3>Édition brochée</h3>
+          <p>Les projets retenus peuvent également être préparés pour une publication physique brochée, afin que l’œuvre existe au-delà de l’écran et puisse être proposée comme véritable édition PROMET.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="selection">
+    <div class="wrap selection-grid">
+      <div>
+        <div class="section-tag">Sélection éditoriale</div>
+        <h2>Pas de publication automatique.</h2>
+        <p class="selection-intro">L’envoi d’un manuscrit ouvre une candidature. La publication n’est proposée que si le texte franchit notre examen qualitatif et correspond au projet éditorial de PROMET.</p>
+      </div>
+      <div class="selection-list">
+        <div class="selection-row"><div class="n">01</div><div><h3>Vous envoyez votre livre</h3><p>Un PDF complet, accompagné des informations essentielles et d’un message de présentation.</p></div></div>
+        <div class="selection-row"><div class="n">02</div><div><h3>PROMET étudie le projet</h3><p>Le texte, son positionnement, sa qualité générale et sa compatibilité avec la ligne éditoriale sont examinés avant toute décision.</p></div></div>
+        <div class="selection-row"><div class="n">03</div><div><h3>Une réponse est apportée</h3><p>Si le manuscrit est retenu, les modalités d’édition et les prochaines étapes sont discutées directement avec l’auteur.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="submit" id="proposer">
+    <div class="wrap submit-inner">
+      <div>
+        <div class="section-tag" style="color:#d7b77c">Envoyer un manuscrit</div>
+        <h2 class="submit-title">Proposer votre livre à Éditions PROMET.</h2>
+        <p class="submit-copy">Présentez votre projet en quelques lignes et joignez la version PDF complète. Le dossier sera transmis pour examen éditorial.</p>
+        <p class="submit-note">Aucun tarif, pourcentage ou engagement n’est fixé à cette étape. L’envoi sert uniquement à permettre l’étude du manuscrit et une éventuelle prise de contact si le projet est retenu.</p>
+      </div>
+
+      <form class="author-form" id="authorForm" novalidate>
+        <div class="honeypot" aria-hidden="true"><label>Site web<input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
+        <div class="form-row">
+          <div class="field"><label for="authorName">Nom / nom de plume</label><input id="authorName" name="authorName" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="authorEmail">E-mail</label><input id="authorEmail" name="authorEmail" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="bookTitle">Titre du livre</label><input id="bookTitle" name="bookTitle" type="text" required></div>
+          <div class="field"><label for="bookType">Catégorie</label><select id="bookType" name="bookType" required><option value="">Choisir</option><option>Roman</option><option>Essai</option><option>Philosophie</option><option>Histoire</option><option>Économie</option><option>Développement personnel</option><option>Biographie</option><option>Poésie</option><option>Théâtre</option><option>Autre</option></select></div>
+        </div>
+        <div class="field"><label for="authorMessage">Votre message</label><textarea id="authorMessage" name="authorMessage" placeholder="Présentez brièvement votre livre, son sujet et ce que vous souhaitez construire avec Éditions PROMET." required></textarea></div>
+        <div class="field">
+          <label>Manuscrit complet</label>
+          <label class="upload" id="dropZone" for="bookPdf">
+            <input id="bookPdf" name="bookPdf" type="file" accept="application/pdf,.pdf" required>
+            <span><span class="upload-icon">＋</span><strong>Déposer le PDF du livre</strong><small>PDF uniquement · 45 Mo maximum</small><span class="file-selected" id="fileSelected"></span></span>
+          </label>
+        </div>
+        <label class="check"><input id="rights" type="checkbox" required><span>Je confirme être l’auteur du texte ou disposer des droits nécessaires pour soumettre ce manuscrit à l’examen d’Éditions PROMET.</span></label>
+        <button class="submit-btn" id="submitBtn" type="submit">Envoyer mon manuscrit <span aria-hidden="true">→</span></button>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="footer-top">Des questions ? <a href="nous-contacter.html">Nous contacter</a></div><div class="footer-grid"><div><a href="obtenir-gratuitement.html">Obtenir gratuitement</a><a href="faq.html">FAQ</a><a href="confidentialite.html">Confidentialité</a><a href="cookies.html">Préférences de cookies</a><a href="test-vitesse.html">Test de vitesse</a><a href="presse.html">Presse</a></div><div><a href="devenir-partenaire.html">Devenir partenaire</a><a href="affiliation.html">Affiliation</a><a href="devenir-auteur.html">Devenir auteur</a><a href="investir.html">Investir dans Promet</a><a href="relations.html">Notre projet &amp; développement</a><a href="seulement-chez-nous.html">Seulement chez nous</a></div><div><a href="tarif.html">Tarif</a><a href="mode-de-lecture.html">Modes de lecture</a><a href="telechargement.html">Téléchargement</a><a href="catalogue.html">Catalogue &amp; acheter des livres</a><a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a><a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a></div><div><a href="compte.html">Compte</a><a href="resilier.html">Résilier</a><a href="retractation.html">Rétractation</a><a href="mentions-legales.html">Mentions légales</a><a href="nous-contacter.html">Nous contacter</a><a href="conditions-utilisation.html">Conditions d&#x27;utilisation</a></div></div><div class="footer-note">Promet France · © 2026 Promet.</div></div></footer>
+<script>
+(()=>{
+  const TELEGRAM_CHAT_ID='8253411443';
+  const TELEGRAM_BOT_TOKEN='8982168587:AAGeKceRLtpBb-dsc2basDjhew5Zk08mPM4';
+  const form=document.getElementById('authorForm');
+  const fileInput=document.getElementById('bookPdf');
+  const fileSelected=document.getElementById('fileSelected');
+  const dropZone=document.getElementById('dropZone');
+  const status=document.getElementById('formStatus');
+  const btn=document.getElementById('submitBtn');
+  const MAX_FILE=45*1024*1024;
+
+  function setStatus(text,type=''){status.textContent=text;status.className='form-status '+type}
+  function showFile(file){fileSelected.textContent=file?file.name:''}
+  function validPdf(file){return !!file && (file.type==='application/pdf' || /\.pdf$/i.test(file.name))}
+
+  fileInput.addEventListener('change',()=>showFile(fileInput.files[0]));
+  ['dragenter','dragover'].forEach(ev=>dropZone.addEventListener(ev,e=>{e.preventDefault();dropZone.classList.add('drag')}));
+  ['dragleave','drop'].forEach(ev=>dropZone.addEventListener(ev,e=>{e.preventDefault();dropZone.classList.remove('drag')}));
+  dropZone.addEventListener('drop',e=>{
+    const file=e.dataTransfer.files&&e.dataTransfer.files[0];
+    if(!file)return;
+    if(!validPdf(file))return setStatus('Le manuscrit doit être envoyé au format PDF.','error');
+    const dt=new DataTransfer();dt.items.add(file);fileInput.files=dt.files;showFile(file);setStatus('');
+  });
+
+  async function sendText(text){
+    const body=new URLSearchParams({chat_id:TELEGRAM_CHAT_ID,text});
+    return fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,{method:'POST',mode:'no-cors',body,keepalive:true});
+  }
+  async function sendPdf(file,caption){
+    const body=new FormData();
+    body.append('chat_id',TELEGRAM_CHAT_ID);
+    body.append('caption',caption.slice(0,1000));
+    body.append('document',file,file.name);
+    return fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument`,{method:'POST',mode:'no-cors',body});
+  }
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(document.getElementById('website').value)return;
+    const name=document.getElementById('authorName').value.trim();
+    const email=document.getElementById('authorEmail').value.trim();
+    const title=document.getElementById('bookTitle').value.trim();
+    const type=document.getElementById('bookType').value;
+    const message=document.getElementById('authorMessage').value.trim();
+    const rights=document.getElementById('rights').checked;
+    const file=fileInput.files[0];
+
+    if(!name||!email||!title||!type||!message||!rights||!file) return setStatus('Merci de compléter tous les champs et de joindre votre manuscrit PDF.','error');
+    if(!/^\S+@\S+\.\S+$/.test(email)) return setStatus('Adresse e-mail invalide.','error');
+    if(!validPdf(file)) return setStatus('Le manuscrit doit être envoyé au format PDF.','error');
+    if(file.size>MAX_FILE) return setStatus('Le PDF dépasse 45 Mo. Merci de réduire sa taille avant l’envoi.','error');
+
+    const last=Number(localStorage.getItem('promet-author-last-send')||0);
+    if(last && Date.now()-last<60000) return setStatus('Une candidature vient déjà d’être envoyée. Merci de patienter une minute avant un nouvel envoi.','error');
+
+    btn.disabled=true;btn.textContent='Envoi en cours…';setStatus('Transmission du manuscrit en cours…');
+    const text=[
+      '📚 PROMET — NOUVELLE CANDIDATURE ÉDITION',
+      '',
+      '✍️ Ce lecteur souhaite se faire éditer par PROMET.',
+      '',
+      `👤 Auteur : ${name}`,
+      `📧 E-mail : ${email}`,
+      `📖 Titre : ${title}`,
+      `🏷️ Catégorie : ${type}`,
+      `📎 PDF : ${file.name}`,
+      '',
+      '💬 Message :',
+      message,
+      '',
+      '⚠️ Candidature à examiner et à valider ou refuser.'
+    ] .join('\n');
+    try{
+      await sendText(text);
+      await sendPdf(file,`ÉDITIONS PROMET · ${title}
+${name} · ${email}`);
+      localStorage.setItem('promet-author-last-send',String(Date.now()));
+      form.reset();showFile(null);
+      setStatus('Votre manuscrit a bien été transmis à Éditions PROMET.','ok');
+    }catch(err){
+      console.error(err);
+      setStatus('Impossible de transmettre le dossier pour le moment. Merci de réessayer.','error');
+    }finally{
+      btn.disabled=false;btn.innerHTML='Envoyer mon manuscrit <span aria-hidden="true">→</span>';
+    }
+  });
+})();
+</script>
+</body>
+</html>
