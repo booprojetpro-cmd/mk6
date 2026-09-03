@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://booprojetpro-cmd.github.io/mk6/sitemap.xml
