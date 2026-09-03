@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>PROMET — Tarif</title>
+  <meta name="description" content="Découvrez les quatre formules PROMET : Essentiel mensuel ou annuel, Cercle mensuel ou annuel.">
+  <style>
+    :root{
+      --black:#050505;--ink:#111;--paper:#f5f2ec;--gold:#b18a52;--gold2:#d7b77c;
+      --muted:#6f6a63;--line:rgba(17,17,17,.13);--max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:#050505}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:#f6f3ee;color:var(--ink);-webkit-font-smoothing:antialiased}
+    a{color:inherit}img{display:block;max-width:100%}button,input,textarea,select{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+
+    /* HEADER — conservé */
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.94);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}
+    .header-in{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{width:136px}
+    .main-nav{display:flex;align-items:center;gap:22px}
+    .main-nav a{color:#dedad3;text-decoration:none;font-size:14px;font-weight:720}
+    .main-nav a:hover,.main-nav a.active{color:#fff}
+    .account-btn{border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:7px;background:#f0ede6!important;color:#0a0a0a!important}
+
+    /* PAGE */
+    main{overflow:hidden;background:#fff}
+    .hero{position:relative;background:#050505;color:#fff;padding:94px 0 92px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .hero::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(215,183,124,.55),transparent)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.7fr);gap:72px;align-items:end}
+    .hero h1{margin:0;max-width:850px;font-size:clamp(50px,7vw,94px);line-height:.91;letter-spacing:-.062em;font-weight:850}
+    .hero h1 em{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-style:italic;color:#d8d4cc}
+    .hero-copy{max-width:500px;margin:0;color:#b9b6b0;font-size:18px;line-height:1.58}
+    .hero-note{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;gap:14px;align-items:flex-start;color:#f1eee8;font-size:14px;line-height:1.45}
+    .hero-note svg{width:20px;height:20px;flex:0 0 auto;stroke:#d7b77c;fill:none;stroke-width:1.7;margin-top:1px}
+
+    .price-index{background:#fff;color:#111;border-bottom:1px solid rgba(17,17,17,.09)}
+    .price-index-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+    .price-index-item{padding:25px 24px 23px;border-right:1px solid rgba(17,17,17,.09)}
+    .price-index-item:first-child{border-left:1px solid rgba(17,17,17,.09)}
+    .price-index-name{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#77716a;font-weight:820;margin-bottom:8px}
+    .price-index-price{font-size:27px;letter-spacing:-.035em;font-weight:820}
+    .price-index-sub{font-size:12px;color:#8c867e;margin-top:3px}
+
+    .plan-section{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:660px;background:#f6f3ee;border-bottom:1px solid rgba(17,17,17,.10)}
+    .plan-section.reverse .plan-media{order:2}.plan-section.reverse .plan-copy{order:1}
+    .plan-media{position:relative;min-height:660px;background:#080808;overflow:hidden}
+    .plan-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;border:0;border-radius:0;background:#080808}
+    .plan-media::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
+    .plan-copy{display:flex;align-items:center;background:#f8f6f2}
+    .plan-copy-inner{width:min(590px,calc(100% - 76px));margin:0 auto;padding:72px 0}
+    .plan-label{font-size:12px;font-weight:840;letter-spacing:.18em;text-transform:uppercase;color:#8b693b;margin-bottom:18px}
+    .plan-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,5vw,72px);line-height:.95;letter-spacing:-.048em;margin:0 0 22px;font-weight:500}
+    .plan-intro{font-size:17px;line-height:1.62;color:#625c55;margin:0 0 34px;max-width:540px}
+    .plan-features{display:grid;gap:12px;margin:0 0 38px;padding:0;list-style:none}
+    .plan-features li{display:grid;grid-template-columns:22px 1fr;gap:11px;align-items:start;color:#292724;font-size:14px;line-height:1.45}
+    .check{width:20px;height:20px;border:1px solid rgba(17,17,17,.19);border-radius:50%;display:grid;place-items:center;margin-top:1px}
+    .check svg{width:11px;height:11px;stroke:#111;fill:none;stroke-width:2.1}
+
+    .choices{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(17,17,17,.12);border-bottom:1px solid rgba(17,17,17,.12)}
+    .choice{padding:25px 24px 26px;min-width:0}
+    .choice+ .choice{border-left:1px solid rgba(17,17,17,.12)}
+    .choice-period{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:820;color:#7f786f;margin-bottom:12px}
+    .choice-price{display:flex;align-items:flex-end;gap:7px;flex-wrap:wrap}
+    .choice-price strong{font-size:35px;line-height:.95;letter-spacing:-.045em}
+    .choice-price span{font-size:13px;color:#756f67;padding-bottom:3px}
+    .choice-meta{font-size:12px;color:#8a837a;line-height:1.45;min-height:34px;margin-top:10px}
+    .choice-save{display:inline-block;margin-top:12px;color:#76572d;font-size:11px;font-weight:840;letter-spacing:.04em}
+    .choice-btn{width:100%;min-height:48px;margin-top:19px;border:0;border-radius:6px;background:#111;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:9px;font-size:13px;font-weight:820;transition:transform .18s ease,background .18s ease}
+    .choice-btn:hover{transform:translateY(-1px);background:#292929}
+    .choice-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
+    .choice.annual{background:rgba(177,138,82,.055)}
+
+    .compare{padding:98px 0 102px;background:#fff;color:#111}
+    .section-head{display:grid;grid-template-columns:1fr .8fr;gap:52px;align-items:end;margin-bottom:46px}
+    .section-head h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,4.6vw,64px);line-height:.98;letter-spacing:-.043em;font-weight:500}
+    .section-head p{margin:0;color:#6b655e;font-size:16px;line-height:1.6;max-width:520px}
+    .compare-table{border-top:1px solid rgba(17,17,17,.14)}
+    .compare-row{display:grid;grid-template-columns:minmax(220px,1.35fr) 1fr 1fr;border-bottom:1px solid rgba(17,17,17,.10);min-height:68px;align-items:stretch}
+    .compare-row>div{padding:19px 20px;display:flex;align-items:center}
+    .compare-row>div+div{border-left:1px solid rgba(17,17,17,.08);justify-content:center;text-align:center}
+    .compare-row.head{min-height:58px;font-size:12px;font-weight:840;letter-spacing:.1em;text-transform:uppercase;color:#746d65;background:#faf9f7}
+    .compare-label{font-size:14px;font-weight:700}.compare-value{font-size:14px;color:#3f3b36}
+    .yes{font-weight:850;color:#111}.muted-value{color:#9b958d}
+
+    .free-strip{background:#0a0a0a;color:#fff;padding:82px 0}
+    .free-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
+    .free-title{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,4.7vw,62px);line-height:1;letter-spacing:-.04em;margin:0 0 18px;font-weight:500}
+    .free-copy{margin:0;color:#aaa7a1;font-size:16px;line-height:1.6;max-width:590px}
+    .free-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 21px;border-radius:7px;border:1px solid rgba(255,255,255,.22);background:#f0ede6;color:#111;text-decoration:none;font-weight:820;font-size:13px}
+    .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.24)}
+    .free-points{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.12)}
+    .free-point{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.10);display:flex;justify-content:space-between;gap:20px;font-size:14px;color:#dad6cf}
+    .free-point strong{color:#fff}.free-point span:last-child{text-align:right;color:#99958f}
+
+    .bottom-note{padding:66px 0 72px;background:#f4f1ec;color:#111;text-align:center}
+    .bottom-note strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,48px);font-weight:500;letter-spacing:-.035em;margin-bottom:13px}
+    .bottom-note p{margin:0 auto;color:#686159;max-width:760px;font-size:16px;line-height:1.6}
+
+    /* FOOTER — conservé */
+    .site-footer{background:#050505;color:#9f9b96;padding:48px 0 70px;border-top:1px solid rgba(255,255,255,.08)}
+    .footer-top{font-size:16px;margin-bottom:30px}.footer-top a{color:#d0cbc4}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 40px}
+    .footer-grid a{display:block;color:#aaa6a0;font-size:14px;line-height:1.3;text-decoration:underline;text-underline-offset:2px;margin-bottom:14px}
+    .footer-grid a:hover{color:white}.footer-note{font-size:13px;color:#74706b;margin-top:25px}
+
+    @media(max-width:980px){
+      .hero-grid,.section-head,.free-grid{grid-template-columns:1fr;gap:32px}
+      .price-index-inner{grid-template-columns:repeat(2,1fr)}
+      .price-index-item:nth-child(3){border-left:1px solid rgba(17,17,17,.09);border-top:1px solid rgba(17,17,17,.09)}
+      .price-index-item:nth-child(4){border-top:1px solid rgba(17,17,17,.09)}
+      .plan-section{grid-template-columns:1fr;min-height:0}
+      .plan-section.reverse .plan-media,.plan-section.reverse .plan-copy{order:initial}
+      .plan-media{min-height:54vw;max-height:620px}
+      .plan-copy-inner{width:min(680px,calc(100% - 48px));padding:62px 0}
+      .footer-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:680px){
+      .wrap{width:min(100% - 30px,var(--max))}
+      .header-in{min-height:68px}.logo{width:116px}.main-nav{gap:10px}.main-nav a{font-size:12px}.main-nav a:nth-child(1),.main-nav a:nth-child(3){display:none}
+      .hero{padding:65px 0 62px}.hero h1{font-size:clamp(42px,14vw,66px)}.hero-copy{font-size:16px}
+      .price-index-inner{grid-template-columns:1fr 1fr}.price-index-item{padding:19px 16px}.price-index-price{font-size:22px}
+      .plan-media{min-height:72vw}.plan-copy-inner{width:min(100% - 30px,620px);padding:48px 0}
+      .plan-title{font-size:46px}.plan-intro{font-size:16px;margin-bottom:28px}
+      .choices{grid-template-columns:1fr}.choice+ .choice{border-left:0;border-top:1px solid rgba(17,17,17,.12)}
+      .choice-meta{min-height:0}.compare{padding:70px 0}.section-head{margin-bottom:30px}
+      .compare-row{grid-template-columns:1.25fr .8fr .8fr}.compare-row>div{padding:16px 9px;font-size:12px}
+      .free-strip{padding:64px 0}.free-point{font-size:13px;align-items:flex-start}.footer-grid{grid-template-columns:1fr}
+      .bottom-note{padding:54px 0 58px}
+    }
+    @media(max-width:430px){
+      .price-index-inner{grid-template-columns:1fr}.price-index-item{border-left:1px solid rgba(17,17,17,.09);border-top:1px solid rgba(17,17,17,.09)}.price-index-item:first-child{border-top:0}
+      .compare{overflow-x:auto}.compare-table{min-width:520px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.choice-btn{transition:none}}
+  </style>
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in"><a href="index.html" aria-label="Promet — accueil"><img class="logo" src="assets/promet.png" alt="PROMET"></a><nav class="main-nav" aria-label="Navigation principale"><a href="catalogue.html">Catalogue</a><a href="tarif.html">Tarif</a><a href="faire-un-don.html">Faire un don</a><a class="account-btn" href="compte.html">S'identifier</a></nav></div></header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Un prix simple.<br><em>Votre rythme.</em></h1>
+      </div>
+      <div>
+        <p class="hero-copy">Deux niveaux d’accès, chacun disponible au mois ou à l’année. Choisissez Essentiel pour lire régulièrement, ou Cercle pour ouvrir tout le catalogue sans limite.</p>
+        <div class="hero-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
+          <span><strong>Aucun renouvellement automatique.</strong><br>À l’échéance, PROMET vous rappelle simplement que votre accès arrive à son terme. Vous décidez si vous continuez.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="price-index" aria-label="Résumé des quatre formules">
+    <div class="wrap price-index-inner">
+      <div class="price-index-item"><div class="price-index-name">Essentiel · mensuel</div><div class="price-index-price">4,00 €</div><div class="price-index-sub">par mois</div></div>
+      <div class="price-index-item"><div class="price-index-name">Essentiel · annuel</div><div class="price-index-price">36,57 €</div><div class="price-index-sub">soit 3,05 € / mois</div></div>
+      <div class="price-index-item"><div class="price-index-name">Cercle · mensuel</div><div class="price-index-price">9,99 €</div><div class="price-index-sub">par mois</div></div>
+      <div class="price-index-item"><div class="price-index-name">Cercle · annuel</div><div class="price-index-price">99,99 €</div><div class="price-index-sub">soit 8,33 € / mois</div></div>
+    </div>
+  </section>
+
+  <section class="plan-section" id="essentiel">
+    <div class="plan-media" aria-label="Présentation vidéo Essentiel">
+      <video src="essentiel.mp4" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="plan-copy">
+      <div class="plan-copy-inner">
+        <div class="plan-label">PROMET ESSENTIEL</div>
+        <h2 class="plan-title">Cinq livres.<br>Chaque mois.</h2>
+        <p class="plan-intro">La formule pensée pour celles et ceux qui veulent une vraie bibliothèque de lecture sans payer pour de l’illimité dont ils n’ont pas besoin.</p>
+        <ul class="plan-features">
+          <li><span class="check"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span><strong>5 crédits de lecture chaque mois</strong> pour choisir vos cinq livres.</span></li>
+          <li><span class="check"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span>Lecture et livre audio inclus pour les ouvrages choisis lorsqu’un audio est disponible.</span></li>
+          <li><span class="check"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span>Sans publicité, avec progression de lecture et profil synchronisés.</span></li>
+        </ul>
+        <div class="choices">
+          <article class="choice">
+            <div class="choice-period">Mensuel</div>
+            <div class="choice-price"><strong>4,00 €</strong><span>/ mois</span></div>
+            <div class="choice-meta">5 livres chaque mois.<br>Pas de PDF offert.</div>
+            <a class="choice-btn" href="app.html">Choisir Essentiel mensuel <svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+          </article>
+          <article class="choice annual">
+            <div class="choice-period">Annuel</div>
+            <div class="choice-price"><strong>36,57 €</strong><span>/ an</span></div>
+            <div class="choice-meta">Soit 3,05 € / mois.<br>1 édition PDF au choix offerte.</div>
+            <div class="choice-save">ÉCONOMISEZ 24 %</div>
+            <a class="choice-btn" href="app.html">Choisir Essentiel annuel <svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="plan-section reverse" id="cercle">
+    <div class="plan-media" aria-label="Présentation vidéo Cercle">
+      <video src="cercle.mp4" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+    <div class="plan-copy">
+      <div class="plan-copy-inner">
+        <div class="plan-label">PROMET CERCLE</div>
+        <h2 class="plan-title">Tout ouvrir.<br>Sans compter.</h2>
+        <p class="plan-intro">Pour les lecteurs qui veulent parcourir PROMET librement : aucun crédit, aucune limite mensuelle, aucune hésitation avant d’ouvrir un livre.</p>
+        <ul class="plan-features">
+          <li><span class="check"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span><strong>Lecture illimitée de tout le catalogue</strong>, sans système de crédits.</span></li>
+          <li><span class="check"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span>Livres audio illimités lorsqu’ils sont disponibles.</span></li>
+          <li><span class="check"><svg viewBox="0 0 16 16"><path d="m3 8 3 3 7-7"/></svg></span><span>Sans publicité. Les téléchargements PDF supplémentaires restent disponibles à l’achat séparément.</span></li>
+        </ul>
+        <div class="choices">
+          <article class="choice">
+            <div class="choice-period">Mensuel</div>
+            <div class="choice-price"><strong>9,99 €</strong><span>/ mois</span></div>
+            <div class="choice-meta">Lecture et audio illimités.<br>Pas de PDF offert.</div>
+            <a class="choice-btn" href="app.html">Choisir Cercle mensuel <svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+          </article>
+          <article class="choice annual">
+            <div class="choice-period">Annuel</div>
+            <div class="choice-price"><strong>99,99 €</strong><span>/ an</span></div>
+            <div class="choice-meta">Soit 8,33 € / mois.<br>1 édition PDF au choix offerte.</div>
+            <div class="choice-save">ÉCONOMISEZ 17 %</div>
+            <a class="choice-btn" href="app.html">Choisir Cercle annuel <svg viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Essentiel ou Cercle&nbsp;?</h2>
+        <p>Le choix tient surtout à votre rythme de lecture. Essentiel fixe un cadre de cinq livres par mois. Cercle enlève cette limite et ouvre tout le catalogue.</p>
+      </div>
+      <div class="compare-table" role="table" aria-label="Comparaison Essentiel et Cercle">
+        <div class="compare-row head" role="row"><div role="columnheader">Fonction</div><div role="columnheader">Essentiel</div><div role="columnheader">Cercle</div></div>
+        <div class="compare-row" role="row"><div class="compare-label" role="cell">Lecture</div><div class="compare-value" role="cell">5 livres / mois</div><div class="compare-value yes" role="cell">Illimitée</div></div>
+        <div class="compare-row" role="row"><div class="compare-label" role="cell">Livres audio</div><div class="compare-value" role="cell">Pour vos livres du mois</div><div class="compare-value yes" role="cell">Illimités</div></div>
+        <div class="compare-row" role="row"><div class="compare-label" role="cell">Publicité</div><div class="compare-value yes" role="cell">Aucune</div><div class="compare-value yes" role="cell">Aucune</div></div>
+        <div class="compare-row" role="row"><div class="compare-label" role="cell">PDF offert avec l’annuel</div><div class="compare-value yes" role="cell">1 édition</div><div class="compare-value yes" role="cell">1 édition</div></div>
+        <div class="compare-row" role="row"><div class="compare-label" role="cell">Renouvellement automatique</div><div class="compare-value muted-value" role="cell">Non</div><div class="compare-value muted-value" role="cell">Non</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="free-strip">
+    <div class="wrap free-grid">
+      <div>
+        <h2 class="free-title">Vous pouvez aussi commencer gratuitement.</h2>
+        <p class="free-copy">Le compte Free reste à 0,00 €. Il donne accès aux livres marqués FREE, à leur lecture et à leur audio lorsqu’il est disponible. Les étudiants et demandeurs d’emploi peuvent également demander 6 mois d’Essentiel offerts sur justificatifs.</p>
+        <div class="free-actions">
+          <a class="btn" href="app.html">Ouvrir PROMET</a>
+          <a class="btn ghost" href="obtenir-gratuitement.html">Voir l’accès gratuit 6 mois</a>
+        </div>
+      </div>
+      <div class="free-points">
+        <div class="free-point"><strong>Free</strong><span>0,00 €</span></div>
+        <div class="free-point"><strong>Livres FREE</strong><span>lecture + audio disponible</span></div>
+        <div class="free-point"><strong>Publicité</strong><span>oui</span></div>
+        <div class="free-point"><strong>Étudiant / demandeur d’emploi</strong><span>6 mois Essentiel offerts sur justificatifs</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-note">
+    <div class="wrap">
+      <strong>Vous préférez acheter à l’unité&nbsp;?</strong>
+      <p>Un livre peut aussi être acheté séparément dans PROMET pour 2,99 €, avec son livre audio lorsqu’il est disponible. Vous n’êtes donc jamais obligé de prendre un abonnement pour commencer.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="wrap"><div class="footer-top">Des questions ? <a href="nous-contacter.html">Nous contacter</a></div><div class="footer-grid"><div><a href="obtenir-gratuitement.html">Obtenir gratuitement</a><a href="faq.html">FAQ</a><a href="confidentialite.html">Confidentialité</a><a href="cookies.html">Préférences de cookies</a><a href="test-vitesse.html">Test de vitesse</a><a href="presse.html">Presse</a></div><div><a href="devenir-partenaire.html">Devenir partenaire</a><a href="affiliation.html">Affiliation</a><a href="devenir-auteur.html">Devenir auteur</a><a href="investir.html">Investir dans Promet</a><a href="relations.html">Notre projet &amp; développement</a><a href="seulement-chez-nous.html">Seulement chez nous</a></div><div><a href="tarif.html">Tarif</a><a href="mode-de-lecture.html">Modes de lecture</a><a href="telechargement.html">Téléchargement</a><a href="catalogue.html">Catalogue &amp; acheter des livres</a><a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a><a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a></div><div><a href="compte.html">Compte</a><a href="resilier.html">Résilier</a><a href="retractation.html">Rétractation</a><a href="mentions-legales.html">Mentions légales</a><a href="nous-contacter.html">Nous contacter</a><a href="conditions-utilisation.html">Conditions d&#x27;utilisation</a></div></div><div class="footer-note">Promet France · © 2026 Promet.</div></div></footer>
+</body>
+</html>
