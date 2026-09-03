@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>PROMET — FAQ</title>
+<meta name="description" content="Toutes les réponses sur Promet : abonnements, lecture, livres audio, téléchargements, achats, cartes cadeaux et compte.">
+<style>
+:root{--black:#050505;--ink:#111;--paper:#f5f2ec;--gold:#b18a52;--gold2:#d7b77c;--muted:#6f6a63;--line:rgba(17,17,17,.13);--max:1180px;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#050505}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:#f6f3ee;color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{display:block;max-width:100%}button,input{font:inherit}button{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+
+/* HEADER — conservé */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.94);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}
+.header-in{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{width:136px}
+.main-nav{display:flex;align-items:center;gap:22px}
+.main-nav a{color:#dedad3;text-decoration:none;font-size:14px;font-weight:720}
+.main-nav a:hover,.main-nav a.active{color:#fff}
+.account-btn{border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:7px;background:#f0ede6!important;color:#0a0a0a!important}
+
+/* HERO FAQ */
+.faq-hero{position:relative;overflow:hidden;background:#f4f1ec url('assets/marbre3.png') center/cover;color:#101010;border-bottom:1px solid rgba(17,17,17,.10)}
+.faq-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.84) 50%,rgba(255,255,255,.44) 100%)}
+.hero-inner{position:relative;z-index:1;padding:94px 0 84px}
+.hero-copy{max-width:820px}
+.hero-copy h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(52px,7vw,92px);line-height:.93;letter-spacing:-.052em;font-weight:700}
+.hero-copy p{margin:24px 0 0;max-width:720px;font-size:clamp(18px,2vw,23px);line-height:1.55;color:#56504a}
+.search-shell{margin-top:42px;max-width:800px;position:relative}
+.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:22px;height:22px;stroke:#2a2927;stroke-width:1.8;fill:none;pointer-events:none}
+#faqSearch{width:100%;height:66px;border:1px solid rgba(17,17,17,.19);border-radius:10px;background:rgba(255,255,255,.90);padding:0 58px 0 58px;color:#111;font-size:17px;font-weight:620;outline:none;box-shadow:0 16px 46px rgba(40,28,15,.10);transition:border-color .2s,box-shadow .2s,transform .2s}
+#faqSearch:focus{border-color:#111;box-shadow:0 20px 56px rgba(40,28,15,.15),0 0 0 3px rgba(17,17,17,.06);transform:translateY(-1px)}
+#faqSearch::placeholder{color:#7f7972;font-weight:520}
+.search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:38px;height:38px;border:0;border-radius:50%;background:transparent;display:none;place-items:center;cursor:pointer;color:#6d675f}
+.search-clear:hover{background:rgba(17,17,17,.06);color:#111}
+.search-clear.show{display:grid}
+.search-clear svg{width:16px;height:16px;stroke:currentColor;stroke-width:2;fill:none}
+.search-meta{display:flex;align-items:center;gap:10px;margin-top:12px;color:#77716a;font-size:12px}
+.search-meta i{width:5px;height:5px;border-radius:50%;background:#b18a52;display:block}
+
+/* RACCOURCIS */
+.shortcuts{background:#050505;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.shortcut-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.shortcut{min-height:150px;padding:28px 24px 26px;border-right:1px solid rgba(255,255,255,.09);text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transition:background .22s ease}
+.shortcut:first-child{border-left:1px solid rgba(255,255,255,.09)}
+.shortcut:hover{background:#101010}
+.shortcut-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.shortcut-index{font-size:11px;letter-spacing:.13em;color:#807b75;font-weight:800}
+.shortcut svg{width:19px;height:19px;stroke:#d8d4cd;stroke-width:1.6;fill:none;transition:transform .22s ease}
+.shortcut:hover svg{transform:translate(3px,-3px)}
+.shortcut strong{font-family:Georgia,"Times New Roman",serif;font-size:23px;line-height:1.08;font-weight:500}
+.shortcut small{display:block;margin-top:7px;color:#9f9a93;font-size:13px;line-height:1.4}
+
+/* FAQ PRINCIPALE */
+.faq-main{background:#f7f5f1;color:#111;padding:86px 0 102px}
+.faq-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:72px;align-items:start}
+.faq-side{position:sticky;top:110px}
+.faq-side h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin:0 0 18px;color:#827b72}
+.category-nav{display:grid;border-top:1px solid rgba(17,17,17,.12)}
+.category-nav button{border:0;border-bottom:1px solid rgba(17,17,17,.10);background:transparent;text-align:left;padding:15px 2px;cursor:pointer;font-size:14px;color:#716b64;font-weight:650;display:flex;justify-content:space-between;align-items:center;gap:14px;transition:color .2s,padding-left .2s}
+.category-nav button:hover,.category-nav button.active{color:#111;padding-left:7px}
+.category-nav button span{font-size:11px;color:#a39d95;font-variant-numeric:tabular-nums}
+.side-help{margin-top:32px;padding-top:24px;border-top:1px solid rgba(17,17,17,.12)}
+.side-help strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:21px;font-weight:500;margin-bottom:8px}
+.side-help p{margin:0 0 15px;color:#716b64;font-size:13px;line-height:1.5}
+.side-help a{font-size:13px;font-weight:800;text-underline-offset:3px}
+
+.faq-content{min-width:0}
+.faq-group{scroll-margin-top:120px;padding:0 0 62px}
+.faq-group:last-child{padding-bottom:0}
+.group-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:20px;padding-bottom:19px;border-bottom:1px solid rgba(17,17,17,.16)}
+.group-title-wrap h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-.035em;font-weight:600;margin:0}
+.group-title-wrap p{margin:9px 0 0;color:#77716a;font-size:14px;line-height:1.45}
+.group-count{color:#9b958d;font-size:12px;font-weight:700;white-space:nowrap}
+.faq-list{display:grid}
+.faq-item{border-bottom:1px solid rgba(17,17,17,.12)}
+.faq-q{width:100%;border:0;background:transparent;padding:21px 0;display:grid;grid-template-columns:minmax(0,1fr) 38px;gap:24px;align-items:center;text-align:left;cursor:pointer}
+.faq-q-text{font-size:17px;line-height:1.38;font-weight:760;letter-spacing:-.01em}
+.faq-plus{width:34px;height:34px;border:1px solid rgba(17,17,17,.15);border-radius:50%;display:grid;place-items:center;justify-self:end;transition:background .22s,border-color .22s,transform .28s var(--ease)}
+.faq-plus svg{width:14px;height:14px;stroke:#111;stroke-width:1.8;fill:none}
+.faq-item.open .faq-plus{background:#111;border-color:#111;transform:rotate(45deg)}
+.faq-item.open .faq-plus svg{stroke:#fff}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .32s var(--ease)}
+.faq-a-inner{overflow:hidden}
+.faq-a p{margin:0;padding:0 58px 22px 0;color:#5f5953;font-size:15px;line-height:1.72;max-width:800px}
+.faq-a a{font-weight:800;text-underline-offset:3px}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-item.open .faq-q-text{color:#000}
+
+.no-results{display:none;padding:70px 0 30px;border-top:1px solid rgba(17,17,17,.12)}
+.no-results.show{display:block}
+.no-results h3{font-family:Georgia,"Times New Roman",serif;font-size:34px;font-weight:500;margin:0 0 10px}
+.no-results p{margin:0;color:#716b64;line-height:1.6}
+.no-results a{font-weight:800}
+
+/* BAS DE PAGE */
+.support-band{background:#0a0a0a;color:#fff;padding:78px 0;border-top:1px solid rgba(255,255,255,.08)}
+.support-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:end}
+.support-copy h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,5vw,64px);line-height:.98;letter-spacing:-.04em;font-weight:500;margin:0 0 17px;max-width:700px}
+.support-copy p{margin:0;max-width:650px;color:#aaa49c;font-size:16px;line-height:1.6}
+.support-actions{display:grid;gap:10px}
+.support-btn{min-height:56px;padding:0 18px;border:1px solid rgba(255,255,255,.15);border-radius:8px;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:14px;font-weight:780;transition:background .2s,border-color .2s}
+.support-btn:hover{background:#161616;border-color:rgba(255,255,255,.28)}
+.support-btn.primary{background:#f0ede6;color:#0b0b0b;border-color:#f0ede6}
+.support-btn.primary:hover{background:#fff}
+.support-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.7;fill:none}
+
+/* FOOTER — conservé */
+.site-footer{background:#050505;color:#9f9b96;padding:48px 0 70px;border-top:1px solid rgba(255,255,255,.08)}
+.footer-top{font-size:16px;margin-bottom:30px}
+.footer-top a{color:#d0cbc4}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 40px}
+.footer-grid a{display:block;color:#aaa6a0;font-size:14px;line-height:1.3;text-decoration:underline;text-underline-offset:2px;margin-bottom:14px}
+.footer-grid a:hover{color:white}
+.footer-note{font-size:13px;color:#74706b;margin-top:25px}
+
+@media(max-width:980px){
+  .shortcut-grid{grid-template-columns:repeat(2,1fr)}
+  .shortcut:nth-child(2){border-right:0}
+  .shortcut:nth-child(3){border-left:1px solid rgba(255,255,255,.09);border-top:1px solid rgba(255,255,255,.09)}
+  .shortcut:nth-child(4){border-top:1px solid rgba(255,255,255,.09);border-right:0}
+  .faq-layout{grid-template-columns:1fr;gap:42px}
+  .faq-side{position:static}
+  .category-nav{grid-template-columns:repeat(2,1fr)}
+  .category-nav button:nth-child(odd){border-right:1px solid rgba(17,17,17,.10);padding-right:14px}
+  .category-nav button:nth-child(even){padding-left:14px}
+  .category-nav button:nth-child(even):hover,.category-nav button:nth-child(even).active{padding-left:20px}
+  .side-help{display:none}
+  .support-grid{grid-template-columns:1fr;gap:32px}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .main-nav a:nth-child(2){display:none}
+}
+@media(max-width:680px){
+  .wrap{width:min(100% - 30px,var(--max))}
+  .header-in{min-height:68px}
+  .logo{width:116px}
+  .main-nav{gap:10px}
+  .main-nav a{font-size:12px}
+  .main-nav a:nth-child(1),.main-nav a:nth-child(3){display:none}
+  .hero-inner{padding:64px 0 58px}
+  .hero-copy h1{font-size:clamp(45px,14vw,68px)}
+  .hero-copy p{font-size:17px;margin-top:18px}
+  .search-shell{margin-top:30px}
+  #faqSearch{height:60px;font-size:15px;padding-left:50px}
+  .search-icon{left:17px;width:20px;height:20px}
+  .shortcut-grid{grid-template-columns:1fr}
+  .shortcut,.shortcut:first-child,.shortcut:nth-child(3){min-height:118px;border-left:0;border-right:0;border-top:1px solid rgba(255,255,255,.09);padding:22px 0}
+  .shortcut:first-child{border-top:0}
+  .faq-main{padding:58px 0 72px}
+  .faq-layout{gap:34px}
+  .category-nav{display:flex;overflow-x:auto;border-top:0;border-bottom:1px solid rgba(17,17,17,.12);gap:8px;padding-bottom:13px;scrollbar-width:none}
+  .category-nav::-webkit-scrollbar{display:none}
+  .category-nav button,.category-nav button:nth-child(odd),.category-nav button:nth-child(even){flex:0 0 auto;border:1px solid rgba(17,17,17,.13);border-radius:999px;padding:10px 13px!important;gap:8px;font-size:12px;white-space:nowrap}
+  .category-nav button.active{background:#111;color:#fff;border-color:#111}
+  .category-nav button.active span{color:#bbb}
+  .faq-side h2{display:none}
+  .faq-group{padding-bottom:48px;scroll-margin-top:90px}
+  .group-head{display:block;margin-bottom:9px}
+  .group-title-wrap h2{font-size:34px}
+  .group-count{display:none}
+  .faq-q{padding:19px 0;grid-template-columns:minmax(0,1fr) 34px;gap:14px}
+  .faq-q-text{font-size:15px}
+  .faq-plus{width:32px;height:32px}
+  .faq-a p{padding-right:14px;font-size:14px}
+  .support-band{padding:58px 0}
+  .support-copy h2{font-size:42px}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in"><a href="index.html" aria-label="Promet — accueil"><img class="logo" src="assets/promet.png" alt="PROMET"></a><nav class="main-nav" aria-label="Navigation principale"><a href="catalogue.html">Catalogue</a><a href="tarif.html">Tarif</a><a href="faire-un-don.html">Faire un don</a><a class="account-btn" href="compte.html">S'identifier</a></nav></div></header>
+<main>
+  <section class="faq-hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1>Comment pouvons-nous vous aider&nbsp;?</h1>
+        <p>Abonnement, lecture, audio, achats ou compte&nbsp;: trouvez rapidement une réponse claire sur le fonctionnement de PROMET.</p>
+      </div>
+      <div class="search-shell">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.2 16.2 4.3 4.3"></path></svg>
+        <label for="faqSearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Rechercher dans la FAQ</label>
+        <input id="faqSearch" type="search" autocomplete="off" placeholder="Rechercher une question…">
+        <button class="search-clear" id="searchClear" type="button" aria-label="Effacer la recherche"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+        <div class="search-meta"><i></i><span id="searchMeta">Toutes les réponses essentielles, au même endroit.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shortcuts" aria-label="Accès rapides">
+    <div class="wrap shortcut-grid">
+      <a class="shortcut" href="#abonnements"><div class="shortcut-top"><span class="shortcut-index">01</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"></path></svg></div><div><strong>Abonnements</strong><small>Formules, accès et résiliation.</small></div></a>
+      <a class="shortcut" href="#lecture"><div class="shortcut-top"><span class="shortcut-index">02</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"></path></svg></div><div><strong>Lire & écouter</strong><small>Lecture, audio et hors connexion.</small></div></a>
+      <a class="shortcut" href="#achats"><div class="shortcut-top"><span class="shortcut-index">03</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"></path></svg></div><div><strong>Achats & cadeaux</strong><small>Livres à l’unité et cartes cadeaux.</small></div></a>
+      <a class="shortcut" href="#compte"><div class="shortcut-top"><span class="shortcut-index">04</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"></path></svg></div><div><strong>Compte & assistance</strong><small>Connexion, profil et support.</small></div></a>
+    </div>
+  </section>
+
+  <section class="faq-main">
+    <div class="wrap faq-layout">
+      <aside class="faq-side" aria-label="Catégories FAQ">
+        <h2>Parcourir</h2>
+        <nav class="category-nav">
+          <button type="button" class="active" data-target="general">PROMET <span>5</span></button>
+          <button type="button" data-target="abonnements">Abonnements <span>6</span></button>
+          <button type="button" data-target="lecture">Lecture & audio <span>7</span></button>
+          <button type="button" data-target="achats">Achats & cadeaux <span>5</span></button>
+          <button type="button" data-target="compte">Compte & aide <span>6</span></button>
+        </nav>
+        <div class="side-help"><strong>Une autre question&nbsp;?</strong><p>L’équipe PROMET peut vous aider directement si vous ne trouvez pas votre réponse ici.</p><a href="nous-contacter.html">Nous contacter →</a></div>
+      </aside>
+
+      <div class="faq-content" id="faqContent">
+        <section class="faq-group" id="general" data-group="PROMET">
+          <div class="group-head"><div class="group-title-wrap"><h2>PROMET</h2><p>Comprendre le service en quelques réponses.</p></div><span class="group-count">5 questions</span></div>
+          <div class="faq-list">
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Qu’est-ce que PROMET&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>PROMET est une bibliothèque numérique consacrée aux grands textes, aux classiques et aux éditions pensées pour une lecture moderne. Le service réunit lecture, livres audio lorsqu’ils sont disponibles, suivi de progression et accès à une bibliothèque personnelle.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Quels types de livres trouve-t-on sur PROMET&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Le catalogue couvre notamment la philosophie, l’histoire, l’économie, la stratégie, la littérature, la psychologie, les sciences et les grands classiques. Vous pouvez consulter une sélection publique depuis la page <a href="catalogue.html">Catalogue</a>.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Puis-je essayer PROMET sans payer&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Oui. PROMET propose un accès Free avec une sélection et des fonctionnalités accessibles sans abonnement payant. Certaines œuvres ou fonctions peuvent demander un achat, un déblocage ou une formule supérieure.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">PROMET fonctionne-t-il sur téléphone, tablette et ordinateur&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Oui. L’interface est conçue pour fonctionner directement dans le navigateur sur ordinateur, téléphone et tablette, avec une mise en page adaptée à chaque format.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Existe-t-il un accès gratuit pour les étudiants ou demandeurs d’emploi&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Une page dédiée permet de déposer une demande d’accès gratuit lorsque vous êtes éligible. Les modalités et justificatifs éventuels sont détaillés sur <a href="obtenir-gratuitement.html">Obtenir gratuitement</a>.</p></div></div></article>
+          </div>
+        </section>
+
+        <section class="faq-group" id="abonnements" data-group="Abonnements">
+          <div class="group-head"><div class="group-title-wrap"><h2>Abonnements</h2><p>Choisir une formule et gérer son accès.</p></div><span class="group-count">6 questions</span></div>
+          <div class="faq-list">
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Quelles formules sont disponibles&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>PROMET propose plusieurs niveaux d’accès, dont Free, Essentiel et Cercle. Les droits diffèrent selon la formule&nbsp;: volume d’accès, lecture audio, avantages et fonctionnalités exclusives. Les offres à jour sont présentées sur la page <a href="tarif.html">Tarif</a>.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Quelle est la différence entre Essentiel et Cercle&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Essentiel est pensé pour accéder régulièrement à la bibliothèque avec une formule simple. Cercle correspond au niveau le plus complet et ajoute des avantages réservés aux membres. Pour éviter toute information obsolète, consultez le comparatif exact sur <a href="tarif.html">Tarif</a>.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Puis-je changer de formule&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Oui. Depuis votre compte, vous pouvez consulter votre formule actuelle et accéder aux options disponibles pour évoluer vers un autre niveau d’accès.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Comment résilier mon abonnement&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>La procédure est détaillée sur la page <a href="resilier.html">Résilier</a>. Elle vous permet de demander l’arrêt de votre abonnement en suivant les étapes prévues par PROMET.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Que devient ma bibliothèque après une résiliation&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Les contenus dépendant d’un abonnement peuvent ne plus être accessibles après la fin de l’accès correspondant. Les livres achetés à l’unité restent distincts de l’accès fourni par un abonnement.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Où consulter les prix actuels&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Les prix, durées et avantages en vigueur sont centralisés sur la page <a href="tarif.html">Tarif</a>. C’est la référence à utiliser avant toute souscription.</p></div></div></article>
+          </div>
+        </section>
+
+        <section class="faq-group" id="lecture" data-group="Lecture et audio">
+          <div class="group-head"><div class="group-title-wrap"><h2>Lecture & audio</h2><p>Lire, écouter, reprendre et télécharger.</p></div><span class="group-count">7 questions</span></div>
+          <div class="faq-list">
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Comment commencer la lecture d’un livre&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Ouvrez un titre depuis l’application, puis utilisez le bouton de lecture disponible sur sa fiche. Selon votre formule et le livre choisi, l’accès peut être inclus, gratuit ou nécessiter un achat.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">PROMET mémorise-t-il ma progression&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Oui. L’application est conçue pour conserver la progression de lecture afin de vous permettre de reprendre un ouvrage plus facilement depuis votre bibliothèque.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Tous les livres existent-ils en version audio&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Non. L’audio est disponible sur une partie du catalogue. Lorsqu’un livre possède une version audio, l’option correspondante apparaît directement dans sa fiche ou dans son interface de lecture.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Puis-je reprendre un livre audio là où je l’ai arrêté&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Le lecteur audio est pensé pour faciliter la reprise de l’écoute et le déplacement dans le contenu. Les contrôles disponibles peuvent varier selon le titre et l’appareil utilisé.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Puis-je télécharger un livre&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Certains titres peuvent être proposés au téléchargement selon leur mode d’accès. La page <a href="telechargement.html">Téléchargement</a> explique le fonctionnement et les conditions associées.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Quels modes de lecture sont proposés&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>PROMET combine lecture numérique et, lorsqu’elle existe pour le titre, écoute audio. Vous pouvez consulter la page <a href="mode-de-lecture.html">Modes de lecture</a> pour une présentation dédiée.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Que faire si un livre ou un audio ne se charge pas&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Rechargez d’abord la page, vérifiez votre connexion et réessayez depuis la fiche du livre. Si le problème persiste, utilisez <a href="nous-contacter.html">Nous contacter</a> en indiquant le titre concerné et l’appareil utilisé.</p></div></div></article>
+          </div>
+        </section>
+
+        <section class="faq-group" id="achats" data-group="Achats et cadeaux">
+          <div class="group-head"><div class="group-title-wrap"><h2>Achats & cadeaux</h2><p>Acheter un livre ou offrir PROMET.</p></div><span class="group-count">5 questions</span></div>
+          <div class="faq-list">
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Puis-je acheter un livre sans abonnement&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Oui, lorsqu’un titre est proposé à l’achat individuel. Vous pouvez alors l’acquérir sans souscrire nécessairement à une formule d’abonnement. Les options disponibles apparaissent sur la fiche du livre.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Où voir les livres disponibles à l’achat&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>La page <a href="catalogue.html">Catalogue & acheter des livres</a> présente une sélection publique. L’application complète permet ensuite d’explorer la bibliothèque et les options disponibles pour chaque titre.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Puis-je offrir PROMET à quelqu’un&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Oui. La page <a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a> permet de choisir une formule cadeau annuelle, de renseigner le destinataire et de poursuivre vers le paiement.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Comment utiliser une carte cadeau reçue&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Rendez-vous sur <a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a> et suivez les étapes indiquées pour associer votre cadeau à votre accès PROMET.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Puis-je demander une rétractation&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Les informations relatives au droit de rétractation et aux situations dans lesquelles il peut s’appliquer sont détaillées sur la page <a href="retractation.html">Rétractation</a>.</p></div></div></article>
+          </div>
+        </section>
+
+        <section class="faq-group" id="compte" data-group="Compte et aide">
+          <div class="group-head"><div class="group-title-wrap"><h2>Compte & aide</h2><p>Connexion, profil, données et assistance.</p></div><span class="group-count">6 questions</span></div>
+          <div class="faq-list">
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Comment créer un compte ou me connecter&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Utilisez le bouton «&nbsp;S’identifier&nbsp;» en haut du site ou rendez-vous directement sur la page <a href="compte.html">Compte</a>. Suivez ensuite les options proposées pour vous connecter ou accéder à votre espace.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Où retrouver mon abonnement et mes informations&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Votre espace compte centralise l’accès à votre profil et aux informations liées à votre utilisation de PROMET. Les éléments visibles dépendent de votre état de connexion et de votre formule.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Que faire si je n’arrive plus à me connecter&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Vérifiez l’adresse e-mail utilisée et réessayez depuis la page Compte. Si le problème persiste, contactez l’équipe en précisant l’adresse e-mail concernée sans transmettre de mot de passe.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Comment PROMET utilise-t-il mes données&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Les informations relatives aux données personnelles sont détaillées sur la page <a href="confidentialite.html">Confidentialité</a>. Vous pouvez également consulter les <a href="cookies.html">Préférences de cookies</a>.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Où trouver les conditions d’utilisation&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Les règles contractuelles d’utilisation du service sont disponibles sur la page <a href="conditions-utilisation.html">Conditions d’utilisation</a>. Les informations légales de l’éditeur figurent dans les <a href="mentions-legales.html">Mentions légales</a>.</p></div></div></article>
+            <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false"><span class="faq-q-text">Comment contacter l’équipe PROMET&nbsp;?</span><span class="faq-plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></button><div class="faq-a"><div class="faq-a-inner"><p>Utilisez la page <a href="nous-contacter.html">Nous contacter</a>. Pour un problème technique, indiquez de préférence l’appareil, le navigateur, le titre concerné et ce qui s’affiche à l’écran.</p></div></div></article>
+          </div>
+        </section>
+
+        <div class="no-results" id="noResults"><h3>Aucune réponse trouvée.</h3><p>Essayez avec un autre mot ou <a href="nous-contacter.html">contactez directement l’équipe PROMET</a>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="support-band">
+    <div class="wrap support-grid">
+      <div class="support-copy"><h2>Vous n’avez pas trouvé votre réponse&nbsp;?</h2><p>La FAQ couvre les cas les plus fréquents. Pour une demande liée à votre compte, un paiement ou un problème de lecture, contactez directement l’équipe.</p></div>
+      <div class="support-actions"><a class="support-btn primary" href="nous-contacter.html"><span>Contacter PROMET</span><svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a><a class="support-btn" href="compte.html"><span>Accéder à mon compte</span><svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="footer-top">Des questions ? <a href="nous-contacter.html">Nous contacter</a></div><div class="footer-grid"><div><a href="obtenir-gratuitement.html">Obtenir gratuitement</a><a href="faq.html">FAQ</a><a href="confidentialite.html">Confidentialité</a><a href="cookies.html">Préférences de cookies</a><a href="test-vitesse.html">Test de vitesse</a><a href="presse.html">Presse</a></div><div><a href="devenir-partenaire.html">Devenir partenaire</a><a href="affiliation.html">Affiliation</a><a href="devenir-auteur.html">Devenir auteur</a><a href="investir.html">Investir dans Promet</a><a href="relations.html">Notre projet &amp; développement</a><a href="seulement-chez-nous.html">Seulement chez nous</a></div><div><a href="tarif.html">Tarif</a><a href="mode-de-lecture.html">Modes de lecture</a><a href="telechargement.html">Téléchargement</a><a href="catalogue.html">Catalogue &amp; acheter des livres</a><a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a><a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a></div><div><a href="compte.html">Compte</a><a href="resilier.html">Résilier</a><a href="retractation.html">Rétractation</a><a href="mentions-legales.html">Mentions légales</a><a href="nous-contacter.html">Nous contacter</a><a href="conditions-utilisation.html">Conditions d&#x27;utilisation</a></div></div><div class="footer-note">Promet France · © 2026 Promet.</div></div></footer>
+<script>
+(()=>{
+  const items=[...document.querySelectorAll('.faq-item')];
+  const groups=[...document.querySelectorAll('.faq-group')];
+  const search=document.getElementById('faqSearch');
+  const clear=document.getElementById('searchClear');
+  const meta=document.getElementById('searchMeta');
+  const noResults=document.getElementById('noResults');
+  const navButtons=[...document.querySelectorAll('.category-nav button')];
+  const normalize=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+
+  items.forEach(item=>{
+    const btn=item.querySelector('.faq-q');
+    btn.addEventListener('click',()=>{
+      const open=item.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+
+  function runSearch(){
+    const q=normalize(search.value);
+    clear.classList.toggle('show',!!q);
+    let visible=0;
+    groups.forEach(group=>{
+      let groupVisible=0;
+      group.querySelectorAll('.faq-item').forEach(item=>{
+        const hay=normalize(item.textContent+' '+group.dataset.group);
+        const show=!q||hay.includes(q);
+        item.hidden=!show;
+        if(show){visible++;groupVisible++;}
+      });
+      group.hidden=groupVisible===0;
+    });
+    noResults.classList.toggle('show',visible===0);
+    if(!q) meta.textContent='Toutes les réponses essentielles, au même endroit.';
+    else meta.textContent=visible===0?'Aucun résultat':visible+(visible>1?' réponses trouvées':' réponse trouvée');
+  }
+  search.addEventListener('input',runSearch);
+  search.addEventListener('keydown',e=>{if(e.key==='Escape'){search.value='';runSearch();search.blur();}});
+  clear.addEventListener('click',()=>{search.value='';runSearch();search.focus();});
+
+  navButtons.forEach(btn=>btn.addEventListener('click',()=>{
+    search.value='';runSearch();
+    const target=document.getElementById(btn.dataset.target);
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{
+      const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+      if(!visible) return;
+      navButtons.forEach(b=>b.classList.toggle('active',b.dataset.target===visible.target.id));
+    },{rootMargin:'-20% 0px -62% 0px',threshold:[0,.2,.5]});
+    groups.forEach(g=>observer.observe(g));
+  }
+})();
+</script>
+</body>
+</html>
