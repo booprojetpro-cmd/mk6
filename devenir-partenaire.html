@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>PROMET — Devenir partenaire</title>
+<meta name="description" content="État, collectivités, bibliothèques, établissements scolaires, universités, entreprises et associations peuvent construire un accès PROMET adapté à leur public.">
+<style>
+:root{--black:#050505;--ink:#111;--paper:#f5f2ec;--gold:#b18a52;--gold2:#d7b77c;--muted:#6f6a63;--line:rgba(17,17,17,.13);--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:#050505}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;background:#f6f3ee;color:var(--ink);-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}button,input,textarea,select{font:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.94);border-bottom:1px solid rgba(255,255,255,.09);backdrop-filter:blur(16px)}
+.header-in{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{width:136px}.main-nav{display:flex;align-items:center;gap:22px}.main-nav a{color:#dedad3;text-decoration:none;font-size:14px;font-weight:720}.main-nav a:hover,.main-nav a.active{color:#fff}.account-btn{border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:7px;background:#f0ede6!important;color:#0a0a0a!important}
+
+/* Page partenaire */
+.partner-main{background:#f5f2ec}
+.partner-hero{position:relative;overflow:hidden;background:#070707;color:#fff;min-height:640px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.09)}
+.partner-hero:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 78% 30%,rgba(177,138,82,.17),transparent 29%),radial-gradient(circle at 62% 68%,rgba(255,255,255,.07),transparent 25%);pointer-events:none}
+.partner-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,7,7,.98) 0%,rgba(7,7,7,.93) 48%,rgba(7,7,7,.66) 100%);pointer-events:none}
+.partner-hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(330px,.88fr);gap:74px;align-items:center;padding:92px 0 88px}
+.hero-copy{max-width:760px}.eyebrow{font-size:12px;font-weight:850;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin:0 0 20px}
+.partner-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,6.3vw,96px);line-height:.94;letter-spacing:-.055em;margin:0;max-width:900px;font-weight:500}
+.partner-hero h1 em{font-weight:400;color:#c7a876}
+.hero-lead{font-size:clamp(18px,1.8vw,24px);line-height:1.55;color:#cbc7c0;max-width:690px;margin:30px 0 0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.primary-btn,.secondary-btn{min-height:52px;padding:0 20px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;font-weight:820;cursor:pointer;transition:.2s ease}
+.primary-btn{border:1px solid #f1eee7;background:#f1eee7;color:#090909}.primary-btn:hover{transform:translateY(-1px);background:#fff}
+.secondary-btn{border:1px solid rgba(255,255,255,.2);color:#fff;background:transparent}.secondary-btn:hover{border-color:rgba(255,255,255,.48)}
+.hero-panel{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);backdrop-filter:blur(18px);padding:10px 28px 12px}
+.hero-line{display:grid;grid-template-columns:34px 1fr;gap:16px;padding:23px 0;border-bottom:1px solid rgba(255,255,255,.11);align-items:start}.hero-line:last-child{border-bottom:0}
+.hero-num{font-family:Georgia,"Times New Roman",serif;color:var(--gold2);font-size:18px}.hero-line strong{display:block;font-size:16px;color:#fff;margin-bottom:5px}.hero-line span{display:block;color:#aaa59f;font-size:13px;line-height:1.5}
+
+.audience-section{background:#f6f3ee;padding:88px 0 92px}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:44px}
+.section-kicker{font-size:12px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#8b693b;margin:0 0 12px}.section-head h2,.model-copy h2,.form-intro h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,4.6vw,64px);line-height:1;letter-spacing:-.045em;margin:0;font-weight:500}
+.section-head p{font-size:17px;line-height:1.7;color:#655f58;margin:0;max-width:520px;justify-self:end}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(17,17,17,.16);border-left:1px solid rgba(17,17,17,.16)}
+.audience-card{min-height:220px;padding:30px;border-right:1px solid rgba(17,17,17,.16);border-bottom:1px solid rgba(17,17,17,.16);background:rgba(255,255,255,.42);transition:.2s ease}
+.audience-card:hover{background:#fff;transform:translateY(-2px)}.audience-card svg{width:30px;height:30px;margin-bottom:35px;stroke:#9b7646}
+.audience-card h3{font-family:Georgia,"Times New Roman",serif;font-size:25px;letter-spacing:-.025em;margin:0 0 9px;font-weight:500}.audience-card p{font-size:14px;line-height:1.58;color:#6d675f;margin:0}
+
+.model-section{background:#0a0a0a;color:#fff;padding:96px 0}
+.model-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:90px;align-items:start}
+.model-copy{position:sticky;top:120px}.model-copy .section-kicker{color:var(--gold2)}.model-copy p{font-size:17px;line-height:1.7;color:#a9a49d;max-width:500px;margin:24px 0 0}
+.model-list{border-top:1px solid rgba(255,255,255,.15)}.model-item{display:grid;grid-template-columns:48px 1fr;gap:22px;padding:27px 0;border-bottom:1px solid rgba(255,255,255,.15)}.model-index{font-family:Georgia,"Times New Roman",serif;color:#b18a52;font-size:20px}.model-item h3{font-size:20px;margin:0 0 7px;color:#fff}.model-item p{margin:0;color:#a8a39d;font-size:15px;line-height:1.6}
+
+.use-section{padding:92px 0;background:#ece7de url('assets/marbre.png') center/cover}
+.use-box{background:rgba(249,247,242,.88);border:1px solid rgba(17,17,17,.12);padding:54px;display:grid;grid-template-columns:.92fr 1.08fr;gap:80px;box-shadow:0 26px 70px rgba(41,30,16,.09)}
+.use-box h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,4.8vw,66px);line-height:.98;letter-spacing:-.045em;margin:0;font-weight:500}
+.use-box h2 em{color:#987443;font-weight:400}.use-box>div>p{font-size:16px;line-height:1.7;color:#6a645c;margin:22px 0 0;max-width:450px}
+.use-cases{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.use-case{padding:20px 21px;background:rgba(255,255,255,.7);border:1px solid rgba(17,17,17,.1);min-height:120px}.use-case strong{font-size:15px;display:block;margin-bottom:7px}.use-case span{font-size:13px;line-height:1.55;color:#6c665f;display:block}
+
+.process-section{padding:92px 0;background:#f7f4ef}
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(17,17,17,.17);border-bottom:1px solid rgba(17,17,17,.17);margin-top:42px}
+.process-step{padding:34px 34px 38px 0;min-height:190px}.process-step+ .process-step{border-left:1px solid rgba(17,17,17,.17);padding-left:34px}
+.process-step span{font-size:11px;font-weight:850;letter-spacing:.15em;color:#9a7647}.process-step h3{font-family:Georgia,"Times New Roman",serif;font-size:27px;margin:17px 0 9px;font-weight:500}.process-step p{font-size:14px;line-height:1.6;color:#6b655f;margin:0}
+
+.contact-section{background:#080808;color:#fff;padding:96px 0 110px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:80px;align-items:start}
+.form-intro{padding-top:8px}.form-intro .section-kicker{color:var(--gold2)}.form-intro p{font-size:16px;line-height:1.7;color:#aaa59f;max-width:450px;margin:24px 0 0}
+.form-note{margin-top:36px;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;font-size:13px!important;color:#7f7a74!important}
+.partner-form{display:grid;gap:15px;background:#111;border:1px solid rgba(255,255,255,.12);padding:34px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:8px}.field label{font-size:12px;font-weight:800;color:#c6c1ba}
+.field input,.field select,.field textarea{width:100%;border:1px solid rgba(255,255,255,.14);background:#090909;color:#fff;border-radius:6px;padding:13px 14px;outline:none;min-height:50px}
+.field input::placeholder,.field textarea::placeholder{color:#69645e}.field textarea{min-height:150px;resize:vertical;line-height:1.55}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(215,183,124,.8);box-shadow:0 0 0 2px rgba(177,138,82,.12)}
+.field select option{background:#111;color:#fff}.required{color:#b8925d}
+.consent{display:flex;gap:10px;align-items:flex-start;color:#8f8a84;font-size:12px;line-height:1.5;margin-top:2px}.consent input{margin-top:2px;accent-color:#b18a52}
+.submit-btn{border:0;border-radius:6px;background:#f1eee7;color:#080808;min-height:54px;padding:0 21px;font-weight:850;cursor:pointer;transition:.2s ease;margin-top:3px}.submit-btn:hover{background:#fff;transform:translateY(-1px)}.submit-btn:disabled{opacity:.56;cursor:wait;transform:none}
+.form-status{min-height:22px;color:#d7b77c;font-size:13px;font-weight:750;line-height:1.45}.form-status.ok{color:#b9d8bd}.form-status.err{color:#e4a7a7}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+
+.site-footer{background:#050505;color:#9f9b96;padding:48px 0 70px;border-top:1px solid rgba(255,255,255,.08)}.footer-top{font-size:16px;margin-bottom:30px}.footer-top a{color:#d0cbc4}.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 40px}.footer-grid a{display:block;color:#aaa6a0;font-size:14px;line-height:1.3;text-decoration:underline;text-underline-offset:2px;margin-bottom:14px}.footer-grid a:hover{color:white}.footer-note{font-size:13px;color:#74706b;margin-top:25px}
+@media(max-width:980px){.footer-grid{grid-template-columns:repeat(2,1fr)}.main-nav a:nth-child(2){display:none}.partner-hero .wrap,.section-head,.model-grid,.use-box,.contact-grid{grid-template-columns:1fr}.partner-hero .wrap{gap:46px}.hero-panel{max-width:720px}.section-head{gap:18px}.section-head p{justify-self:start}.audience-grid{grid-template-columns:repeat(2,1fr)}.model-copy{position:static}.model-grid{gap:48px}.use-box{gap:44px}}
+@media(max-width:680px){.wrap{width:min(100% - 30px,var(--max))}.header-in{min-height:68px}.logo{width:116px}.main-nav{gap:10px}.main-nav a{font-size:12px}.main-nav a:nth-child(1),.main-nav a:nth-child(3){display:none}.footer-grid{grid-template-columns:1fr}.partner-hero{min-height:auto}.partner-hero .wrap{padding:68px 0 62px}.partner-hero h1{font-size:clamp(45px,15vw,68px)}.hero-panel{padding:4px 19px}.audience-section,.model-section,.use-section,.process-section,.contact-section{padding:68px 0}.audience-grid{grid-template-columns:1fr}.audience-card{min-height:180px}.audience-card svg{margin-bottom:24px}.use-box{padding:31px 22px}.use-cases{grid-template-columns:1fr}.process{grid-template-columns:1fr}.process-step{padding:27px 0}.process-step+ .process-step{border-left:0;border-top:1px solid rgba(17,17,17,.17);padding-left:0}.form-row{grid-template-columns:1fr}.partner-form{padding:25px 18px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in"><a href="index.html" aria-label="Promet — accueil"><img class="logo" src="assets/promet.png" alt="PROMET"></a><nav class="main-nav" aria-label="Navigation principale"><a href="catalogue.html">Catalogue</a><a href="tarif.html">Tarif</a><a href="faire-un-don.html">Faire un don</a><a class="account-btn" href="compte.html">S'identifier</a></nav></div></header>
+<main class="partner-main">
+<section class="partner-hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Partenariats institutionnels & collectifs</p>
+      <h1>Donner accès à PROMET, <em>à plusieurs.</em></h1>
+      <p class="hero-lead">Un établissement, une collectivité ou une organisation peut ouvrir PROMET à tout un public avec des conditions construites autour de son projet : tarif groupé, accès préférentiel ou prise en charge complète.</p>
+      <div class="hero-actions"><a class="primary-btn" href="#demande">Présenter un projet</a><a class="secondary-btn" href="#publics">Voir les possibilités</a></div>
+    </div>
+    <aside class="hero-panel" aria-label="Principes du partenariat PROMET">
+      <div class="hero-line"><div class="hero-num">01</div><div><strong>Une offre sur mesure</strong><span>Le nombre de bénéficiaires, la durée et le niveau d’accès sont adaptés au besoin réel.</span></div></div>
+      <div class="hero-line"><div class="hero-num">02</div><div><strong>Un accès individuel</strong><span>Chaque bénéficiaire conserve une expérience personnelle dans l’application.</span></div></div>
+      <div class="hero-line"><div class="hero-num">03</div><div><strong>Un interlocuteur unique</strong><span>La proposition est étudiée directement par PROMET, sans grille imposée au préalable.</span></div></div>
+    </aside>
+  </div>
+</section>
+
+<section class="audience-section" id="publics">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="section-kicker">Pour qui ?</p><h2>Un accès collectif, sans offre standard imposée.</h2></div>
+      <p>PROMET peut être proposé à un groupe déjà constitué ou intégré à un programme culturel, éducatif ou professionnel. Chaque demande est étudiée selon son usage et son volume.</p>
+    </div>
+    <div class="audience-grid">
+      <article class="audience-card"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" stroke-width="1.5"/></svg><h3>État & collectivités</h3><p>Programmes d’accès à la lecture, dispositifs culturels, territoires, services publics et projets d’intérêt général.</p></article>
+      <article class="audience-card"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21V5.5ZM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5A2.5 2.5 0 0 1 20 21V5.5Z" stroke-width="1.5"/></svg><h3>Bibliothèques</h3><p>Proposer une extension numérique du fonds de lecture à des adhérents, lecteurs ou réseaux de médiathèques.</p></article>
+      <article class="audience-card"><svg viewBox="0 0 24 24" fill="none"><path d="m3 9 9-5 9 5-9 5-9-5Zm3 3.5V17c3.4 2.7 8.6 2.7 12 0v-4.5" stroke-width="1.5"/></svg><h3>Écoles & universités</h3><p>Donner à une classe, une promotion ou un établissement un accès organisé aux œuvres et aux livres audio disponibles.</p></article>
+      <article class="audience-card"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V7h6v13M10 20V4h10v16M7 10h1m-1 3h1m5-5h2m-2 4h2m-2 4h2" stroke-width="1.5"/></svg><h3>Entreprises</h3><p>Créer un avantage culture, lecture ou formation pour les collaborateurs, équipes et communautés internes.</p></article>
+      <article class="audience-card"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-2a3 3 0 1 0 0-6m-8 10c-3.3 0-6 2-6 4.5V20h12v-1.5C14 16 11.3 14 8 14Zm8-1c3 0 5.5 1.7 6 4" stroke-width="1.5"/></svg><h3>Associations & clubs</h3><p>Clubs de lecture, associations étudiantes, structures culturelles ou communautés souhaitant négocier un accès commun.</p></article>
+      <article class="audience-card"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8m0-12.8L5.6 18.4" stroke-width="1.5"/></svg><h3>Autres dispositifs</h3><p>Fondations, mécénat, événements, programmes sociaux ou projets atypiques : une proposition peut être étudiée au cas par cas.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="model-section">
+  <div class="wrap model-grid">
+    <div class="model-copy"><p class="section-kicker">L'accord</p><h2>Le bon prix dépend du projet.</h2><p>Il n’y a pas de grille publique pour les partenariats. L’objectif est de trouver une formule crédible pour l’organisme et utile pour les personnes qui recevront l’accès.</p></div>
+    <div class="model-list">
+      <div class="model-item"><div class="model-index">01</div><div><h3>Accès offert aux bénéficiaires</h3><p>L’organisme peut prendre en charge tout ou partie de l’accès pour que les utilisateurs n’aient rien, ou moins, à payer.</p></div></div>
+      <div class="model-item"><div class="model-index">02</div><div><h3>Tarif de groupe</h3><p>Un volume important peut permettre de construire une condition spécifique par rapport aux offres individuelles classiques.</p></div></div>
+      <div class="model-item"><div class="model-index">03</div><div><h3>Durée adaptée</h3><p>Opération ponctuelle, semestre, année scolaire, programme annuel ou autre calendrier : la durée est définie avec le partenaire.</p></div></div>
+      <div class="model-item"><div class="model-index">04</div><div><h3>Périmètre défini</h3><p>Le partenariat précise le nombre de personnes, le niveau d’accès et les modalités pratiques avant toute mise en place.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="use-section">
+  <div class="wrap use-box">
+    <div><p class="section-kicker">Exemples</p><h2>Une bibliothèque. Une école. <em>10 000 lecteurs.</em></h2><p>La même logique peut servir des projets très différents. PROMET étudie le besoin avant de proposer une organisation adaptée.</p></div>
+    <div class="use-cases">
+      <div class="use-case"><strong>100 étudiants pendant un semestre</strong><span>Accès financé ou négocié par un établissement pour une période définie.</span></div>
+      <div class="use-case"><strong>Une médiathèque pour ses adhérents</strong><span>Accès numérique complémentaire au catalogue physique ou aux ressources existantes.</span></div>
+      <div class="use-case"><strong>Un avantage salarié</strong><span>Une entreprise met PROMET à disposition d’un nombre déterminé de collaborateurs.</span></div>
+      <div class="use-case"><strong>Un programme public</strong><span>Une collectivité soutient un accès culturel ciblé sur une population ou un territoire.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="wrap">
+    <div class="section-head"><div><p class="section-kicker">Méthode</p><h2>Simple à présenter. Simple à décider.</h2></div><p>Pas de catalogue de devis incompréhensible : il suffit de décrire le public, le nombre de bénéficiaires et l’objectif recherché.</p></div>
+    <div class="process">
+      <div class="process-step"><span>ÉTAPE 01</span><h3>Vous présentez le besoin</h3><p>Structure, volume, public concerné, durée souhaitée et contexte du projet.</p></div>
+      <div class="process-step"><span>ÉTAPE 02</span><h3>PROMET étudie l’accord</h3><p>Le projet est examiné pour déterminer une formule cohérente et les modalités possibles.</p></div>
+      <div class="process-step"><span>ÉTAPE 03</span><h3>Nous mettons en place</h3><p>Une fois l’accord validé, les accès et la période sont organisés selon les conditions convenues.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="demande">
+  <div class="wrap contact-grid">
+    <div class="form-intro"><p class="section-kicker">Présenter un partenariat</p><h2>Parlez-nous du groupe que vous voulez équiper.</h2><p>Les demandes sérieuses sont étudiées individuellement. Donnez suffisamment de contexte pour permettre une première proposition pertinente.</p><p class="form-note">Cette prise de contact ne crée aucun engagement. Les conditions éventuelles font ensuite l’objet d’un accord spécifique.</p></div>
+    <form class="partner-form" id="partnerForm" novalidate>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row"><div class="field"><label for="structure">Structure <span class="required">*</span></label><input id="structure" name="structure" required maxlength="120" autocomplete="organization" placeholder="Nom de l'organisme"></div><div class="field"><label for="type">Type de structure <span class="required">*</span></label><select id="type" name="type" required><option value="">Sélectionner</option><option>État / administration publique</option><option>Collectivité territoriale</option><option>Bibliothèque / médiathèque</option><option>École / collège / lycée</option><option>Université / enseignement supérieur</option><option>Entreprise</option><option>Association / club</option><option>Fondation / mécénat</option><option>Autre</option></select></div></div>
+      <div class="form-row"><div class="field"><label for="contact">Nom du contact <span class="required">*</span></label><input id="contact" name="contact" required maxlength="100" autocomplete="name" placeholder="Nom et prénom"></div><div class="field"><label for="role">Fonction</label><input id="role" name="role" maxlength="100" autocomplete="organization-title" placeholder="Direction, responsable, enseignant…"></div></div>
+      <div class="form-row"><div class="field"><label for="email">E-mail professionnel <span class="required">*</span></label><input id="email" name="email" type="email" required maxlength="160" autocomplete="email" placeholder="vous@organisation.fr"></div><div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" maxlength="40" autocomplete="tel" placeholder="Optionnel"></div></div>
+      <div class="form-row"><div class="field"><label for="beneficiaries">Nombre de bénéficiaires <span class="required">*</span></label><input id="beneficiaries" name="beneficiaries" type="number" min="2" max="10000000" required placeholder="Ex. 250"></div><div class="field"><label for="duration">Durée envisagée</label><select id="duration" name="duration"><option>À définir</option><option>Opération ponctuelle</option><option>3 mois</option><option>6 mois</option><option>1 année scolaire</option><option>12 mois</option><option>Pluriannuel</option></select></div></div>
+      <div class="form-row"><div class="field"><label for="model">Type d'arrangement recherché</label><select id="model" name="model"><option>À définir ensemble</option><option>Accès offert aux bénéficiaires</option><option>Tarif préférentiel de groupe</option><option>Prise en charge partielle</option><option>Programme sponsorisé / mécénat</option></select></div><div class="field"><label for="budget">Budget / enveloppe</label><select id="budget" name="budget"><option>Non défini</option><option>Moins de 1 000 €</option><option>1 000 – 5 000 €</option><option>5 000 – 20 000 €</option><option>20 000 – 50 000 €</option><option>50 000 € et plus</option></select></div></div>
+      <div class="field"><label for="message">Votre projet <span class="required">*</span></label><textarea id="message" name="message" required minlength="20" maxlength="4000" placeholder="Présentez le public concerné, votre objectif, le calendrier et ce que vous souhaitez mettre en place avec PROMET."></textarea></div>
+      <label class="consent"><input type="checkbox" id="consent" required><span>J’accepte que les informations transmises soient utilisées pour étudier et répondre à cette demande de partenariat.</span></label>
+      <button class="submit-btn" id="submitBtn" type="submit">Envoyer la demande de partenariat</button>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap"><div class="footer-top">Des questions ? <a href="nous-contacter.html">Nous contacter</a></div><div class="footer-grid"><div><a href="obtenir-gratuitement.html">Obtenir gratuitement</a><a href="faq.html">FAQ</a><a href="confidentialite.html">Confidentialité</a><a href="cookies.html">Préférences de cookies</a><a href="test-vitesse.html">Test de vitesse</a><a href="presse.html">Presse</a></div><div><a href="devenir-partenaire.html">Devenir partenaire</a><a href="affiliation.html">Affiliation</a><a href="devenir-auteur.html">Devenir auteur</a><a href="investir.html">Investir dans Promet</a><a href="relations.html">Notre projet &amp; développement</a><a href="seulement-chez-nous.html">Seulement chez nous</a></div><div><a href="tarif.html">Tarif</a><a href="mode-de-lecture.html">Modes de lecture</a><a href="telechargement.html">Téléchargement</a><a href="catalogue.html">Catalogue &amp; acheter des livres</a><a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a><a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a></div><div><a href="compte.html">Compte</a><a href="resilier.html">Résilier</a><a href="retractation.html">Rétractation</a><a href="mentions-legales.html">Mentions légales</a><a href="nous-contacter.html">Nous contacter</a><a href="conditions-utilisation.html">Conditions d&#x27;utilisation</a></div></div><div class="footer-note">Promet France · © 2026 Promet.</div></div></footer>
+<script>
+(()=>{
+  const form=document.getElementById('partnerForm');
+  const status=document.getElementById('formStatus');
+  const btn=document.getElementById('submitBtn');
+  const CHAT='8253411443';
+  const TOKEN='8982168587:AAGeKceRLtpBb-dsc2basDjhew5Zk08mPM4';
+  const safe=(v)=>String(v||'').trim();
+  const line=(label,value)=>value?`${label} : ${value}`:null;
+  async function notify(text){
+    const body=new URLSearchParams({chat_id:CHAT,text});
+    return fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`,{method:'POST',mode:'no-cors',body,keepalive:true});
+  }
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    status.className='form-status';status.textContent='';
+    if(!form.reportValidity()) return;
+    if(safe(form.website.value)) return;
+    const d=new FormData(form);
+    const values={
+      structure:safe(d.get('structure')),type:safe(d.get('type')),contact:safe(d.get('contact')),role:safe(d.get('role')),
+      email:safe(d.get('email')),phone:safe(d.get('phone')),beneficiaries:safe(d.get('beneficiaries')),duration:safe(d.get('duration')),
+      model:safe(d.get('model')),budget:safe(d.get('budget')),message:safe(d.get('message'))
+    };
+    const text=[
+      '🤝 NOUVELLE DEMANDE DE PARTENARIAT PROMET','',
+      line('Structure',values.structure),line('Type',values.type),line('Contact',values.contact),line('Fonction',values.role),
+      line('E-mail',values.email),line('Téléphone',values.phone),line('Bénéficiaires',values.beneficiaries),line('Durée',values.duration),
+      line('Arrangement souhaité',values.model),line('Budget',values.budget),'','PROJET :',values.message,'',
+      `Reçue le : ${new Date().toLocaleString('fr-FR')}`
+    ].filter(v=>v!==null).join('
+').slice(0,4000);
+    btn.disabled=true;btn.textContent='Envoi en cours…';
+    try{
+      await notify(text);
+      status.className='form-status ok';
+      status.textContent='Votre demande a bien été transmise. PROMET reviendra vers vous après étude du projet.';
+      form.reset();
+    }catch(err){
+      console.error(err);
+      status.className='form-status err';
+      status.textContent='Impossible de transmettre la demande pour le moment. Merci de réessayer dans quelques instants.';
+    }finally{btn.disabled=false;btn.textContent='Envoyer la demande de partenariat'}
+  });
+})();
+</script>
+</body></html>
