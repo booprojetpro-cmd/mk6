@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="fr-FR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Promet — lisez, écoutez, louez ou possédez de grands livres. Location dès 0,99 €, achat dès 2,99 €, abonnements dès 4 € par mois." />
+  <title>Promet — Lisez, écoutez, louez ou possédez vos livres</title>
+
+  <!-- SEO / indexation -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://booprojetpro-cmd.github.io/mk6/" />
+  <link rel="alternate" hreflang="fr-FR" href="https://booprojetpro-cmd.github.io/mk6/" />
+  <link rel="alternate" hreflang="x-default" href="https://booprojetpro-cmd.github.io/mk6/" />
+
+  <!-- Social previews -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PROMET" />
+  <meta property="og:title" content="Promet — Lisez, écoutez, louez ou possédez vos livres" />
+  <meta property="og:description" content="Les grands livres à lire ou écouter, à l’unité ou avec un abonnement Promet dès 4 € par mois." />
+  <meta property="og:url" content="https://booprojetpro-cmd.github.io/mk6/" />
+  <meta property="og:image" content="https://booprojetpro-cmd.github.io/mk6/assets/hero.png" />
+  <meta property="og:image:alt" content="PROMET — bibliothèque numérique de grands livres" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Promet — Lisez, écoutez, louez ou possédez vos livres" />
+  <meta name="twitter:description" content="Les grands livres à lire ou écouter, à l’unité ou avec un abonnement Promet dès 4 € par mois." />
+  <meta name="twitter:image" content="https://booprojetpro-cmd.github.io/mk6/assets/hero.png" />
+  <meta name="twitter:image:alt" content="PROMET — bibliothèque numérique de grands livres" />
+
+  <!-- LCP: le hero est une image de fond CSS, on la découvre donc immédiatement -->
+  <link rel="preload" as="image" href="assets/hero.png" fetchpriority="high" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    :root{
+      --black:#050505;
+      --ink:#111111;
+      --paper:#f4f2ee;
+      --paper-2:#ffffff;
+      --gold:#b18a52;
+      --gold-bright:#d7b77c;
+      --gold-dark:#76572d;
+      --muted:#aaa7a2;
+      --radius:18px;
+      --max:1320px;
+      --shadow:0 22px 70px rgba(0,0,0,.32);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--black)}
+    body{margin:0;background:var(--black);color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    button,input,select{font:inherit}
+    button,a{tap-highlight-color:transparent;-webkit-tap-highlight-color:transparent}
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+    .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* HERO */
+    .hero{position:relative;min-height:860px;background:#090909 url('assets/hero.png') center 32% / cover no-repeat;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+      radial-gradient(circle at 50% 42%,rgba(0,0,0,.15) 0 18%,rgba(0,0,0,.54) 62%,rgba(0,0,0,.92) 100%),
+      linear-gradient(180deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.34) 32%,rgba(0,0,0,.62) 72%,#050505 100%)}
+    .nav{height:96px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{width:176px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+    .nav-actions{display:flex;align-items:center;gap:14px}
+    .signin{height:42px;padding:0 18px;border-radius:7px;border:1px solid rgba(255,255,255,.14);background:#f0eee9;color:#0b0b0b;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:.22s ease}
+    .signin:hover{background:#fff;transform:translateY(-1px)}
+    .hero-content{min-height:690px;display:grid;place-items:center;text-align:center;padding:62px 0 120px}
+    .hero-inner{max-width:900px}
+    .hero h1{margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;font-size:clamp(44px,5vw,72px);line-height:1.05;letter-spacing:-.035em;font-weight:950;text-wrap:balance;text-shadow:0 6px 34px rgba(0,0,0,.55)}
+    .hero-tagline{margin:14px auto 0;font-size:clamp(18px,1.7vw,24px);line-height:1.25;font-weight:800;letter-spacing:.01em;color:#f7f5ef;text-shadow:0 4px 20px rgba(0,0,0,.48)}
+    .price-line{font-size:clamp(20px,2vw,28px);font-weight:760;margin:26px 0 0;color:#f7f5ef;text-align:center;line-height:1.45}
+    .hero-copy{font-size:18px;line-height:1.45;font-weight:560;max-width:680px;margin:38px auto 18px;color:#f0eee9}
+    .signup{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;max-width:720px;margin:0 auto}
+    .signup input{height:64px;border-radius:7px;border:1px solid rgba(255,255,255,.46);background:rgba(12,12,12,.67);padding:0 20px;color:#fff;font-size:18px;outline:none;backdrop-filter:blur(10px);transition:border-color .2s,box-shadow .2s}
+    .signup input:focus{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.16)}
+    .cta{height:64px;padding:0 30px;border:0;border-radius:7px;background:linear-gradient(180deg,#efece5,#d9d2c6);color:#080808;font-size:22px;font-weight:900;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .2s ease,filter .2s ease}
+    .cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .cta .arrow{display:inline-block;margin-left:12px;transition:transform .2s ease}
+    .cta:hover .arrow{transform:translateX(3px)}
+    .micro{font-size:12px;color:#c5c1bb;margin-top:12px}
+    .hero-curve{position:absolute;left:0;right:0;bottom:-1px;height:68px;overflow:hidden}
+    .hero-curve::before{content:"";position:absolute;left:-3%;width:106%;height:105px;border-radius:50% 50% 0 0 / 62% 62% 0 0;border-top:4px solid var(--gold);background:#050505;box-shadow:0 -18px 44px rgba(177,138,82,.13)}
+
+    /* COMMON */
+    section{position:relative}
+    .section-title{font-size:clamp(30px,3vw,48px);line-height:1.08;letter-spacing:-.035em;margin:0 0 28px;font-weight:860}
+    .section-kicker{font-family:Georgia,"Times New Roman",serif;color:var(--gold-dark);font-size:18px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+
+    /* TOP 10 */
+    .top-section{padding:88px 0 90px;background:#050505 url('assets/marbre2.png') center / cover;color:#fff}
+    .top-section::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.69)}
+    .top-section>.container{position:relative;z-index:1}
+    .rail-wrap{position:relative}
+    .rail{display:flex;gap:26px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:none;padding:10px 64px 18px 4px;cursor:grab}
+    .rail:active{cursor:grabbing}
+    .rail::-webkit-scrollbar{display:none}
+    .rank-card{position:relative;flex:0 0 266px;height:392px;scroll-snap-align:start;user-select:none}
+    .rank-footer{position:absolute;left:0;right:0;bottom:0;min-height:102px;display:flex;align-items:flex-end;gap:14px;z-index:4}
+    .rank-number{position:static;flex:0 0 auto;font-family:"Arial Black",Arial,"Helvetica Neue",sans-serif;font-size:118px;line-height:.78;font-weight:900;letter-spacing:-.105em;color:#050505;-webkit-text-stroke:3px #ece8df;text-shadow:0 4px 12px rgba(0,0,0,.55)}
+    .cover{position:absolute;right:0;top:0;width:184px;height:276px;object-fit:cover;border-radius:12px;box-shadow:0 18px 42px rgba(0,0,0,.52);transition:transform .24s ease,box-shadow .24s ease;pointer-events:none}
+    .rank-card:hover .cover{transform:translateY(-8px) scale(1.018);box-shadow:0 24px 55px rgba(0,0,0,.65)}
+    .book-meta{position:static;min-width:0;flex:1;padding:0 0 10px;color:#dedbd5;font-size:13px;line-height:1.25;font-weight:650}
+    .book-meta strong{display:block;color:#fff;font-size:14px;line-height:1.15;margin-bottom:3px;text-wrap:balance}
+    .rail-btn{position:absolute;top:110px;width:48px;height:92px;border:0;border-radius:10px;background:rgba(20,20,20,.72);backdrop-filter:blur(10px);color:#fff;display:grid;place-items:center;cursor:pointer;z-index:4;opacity:.9;transition:.2s}
+    .rail-btn:hover{background:rgba(40,40,40,.9);transform:scale(1.04)}
+    .rail-btn svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2.3}
+    .rail-btn.prev{left:-10px}.rail-btn.next{right:-10px}
+
+    /* BENEFITS */
+    .benefits{padding:102px 0 110px;background:#f4f1ec url('assets/marbre.png') center / cover;color:#121212}
+    .benefits::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.32)}
+    .benefits>.container{position:relative;z-index:1}
+    .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .benefit-card{min-height:320px;border:1px solid rgba(38,27,15,.14);background:rgba(255,255,255,.76);border-radius:20px;padding:28px 25px;display:flex;flex-direction:column;box-shadow:0 18px 50px rgba(39,28,15,.09);backdrop-filter:blur(14px);transition:transform .25s ease,box-shadow .25s ease}
+    .benefit-card:hover{transform:translateY(-5px);box-shadow:0 26px 60px rgba(39,28,15,.14)}
+    .benefit-card h3{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.08;margin:0 0 14px;letter-spacing:-.025em}
+    .benefit-card p{margin:0;color:#5b554f;font-size:16px;line-height:1.52;font-weight:520}
+    .benefit-icon{margin-top:auto;width:64px;height:64px;border-radius:18px;background:#131313;color:#f5f2eb;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+    .benefit-icon svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+
+
+    /* VSL */
+    .vsl-section{padding:78px 0 92px;background:#050505;color:#fff}
+    .vsl-shell{position:relative;width:min(1080px,100%);margin:0 auto}
+    .vsl-frame{position:relative;overflow:hidden;border-radius:18px;background:#090909;box-shadow:0 28px 80px rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.09);aspect-ratio:16/9}
+    .vsl-frame video{display:block;width:100%;height:100%;object-fit:cover;background:#090909;cursor:pointer}
+    .vsl-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px}
+    .vsl-control{width:52px;height:52px;border:1px solid rgba(255,255,255,.14);border-radius:50%;background:rgba(255,255,255,.07);color:#f5f2ec;display:grid;place-items:center;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .vsl-control:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+    .vsl-control:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    .vsl-control svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .vsl-control .icon-pause,.vsl-control .icon-sound-on{display:none}
+    .vsl-control.is-active .icon-play,.vsl-control.is-active .icon-sound-off{display:none}
+    .vsl-control.is-active .icon-pause,.vsl-control.is-active .icon-sound-on{display:block}
+
+    /* PRICE */
+    .pricing{padding:110px 0;background:#080808;color:#fff;overflow:hidden}
+    .pricing::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 24%,rgba(177,138,82,.14),transparent 30%),radial-gradient(circle at 15% 70%,rgba(255,255,255,.05),transparent 25%);pointer-events:none}
+    .price-shell{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+    .pricing h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,5vw,76px);line-height:1;letter-spacing:-.04em;margin:0 0 20px}
+    .pricing p{font-size:19px;color:#c9c5bf;line-height:1.55;max-width:620px;margin:0}
+    .price-card{background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:34px;box-shadow:var(--shadow);backdrop-filter:blur(16px)}
+    .price-card .label{font-size:15px;color:#beb9b2;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+    .big-price{display:flex;align-items:flex-end;gap:9px;margin:12px 0 24px}
+    .big-price strong{font-family:Georgia,"Times New Roman",serif;font-size:72px;line-height:.9;font-weight:700}
+    .big-price span{color:#bbb6ae;font-size:17px;padding-bottom:8px}
+    .checks{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:13px}
+    .checks li{display:flex;gap:11px;align-items:flex-start;color:#ece9e4;line-height:1.42}
+    .checks li span:last-child{display:block}
+    .checks li strong{display:block;color:#fff;font-size:16px;margin-bottom:2px}
+    .checks li small{display:block;color:#bcb7af;font-size:14px;line-height:1.45}
+    .check{width:22px;height:22px;border-radius:50%;background:#ede9e0;color:#111;display:grid;place-items:center;flex:0 0 auto;font-size:13px;font-weight:900}
+    .price-card .cta{width:100%;height:58px;font-size:19px}
+
+    /* FAQ */
+    .faq{padding:105px 0 72px;background:#fff url('assets/marbre3.png') center / cover;color:#111}
+    .faq::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.55)}
+    .faq>.container{position:relative;z-index:1}
+    .faq-list{display:grid;gap:10px}
+    .faq-item{border:1px solid rgba(17,17,17,.12);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.83);box-shadow:0 10px 32px rgba(24,18,11,.06)}
+    .faq-q{width:100%;border:0;background:transparent;color:#111;display:flex;justify-content:space-between;align-items:center;gap:30px;text-align:left;padding:24px 26px;font-size:21px;font-weight:760;cursor:pointer}
+    .faq-q svg{width:27px;height:27px;flex:0 0 auto;transition:transform .25s ease;stroke:currentColor;stroke-width:1.7}
+    .faq-item.open .faq-q svg{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease;border-top:0 solid rgba(17,17,17,.1)}
+    .faq-item.open .faq-a{max-height:220px;border-top-width:1px}
+    .faq-a p{margin:0;padding:22px 26px 26px;font-size:17px;line-height:1.58;color:#4e4943}
+
+    /* BOTTOM CTA */
+    .bottom-cta{padding:72px 0 88px;background:#050505;text-align:center}
+    .bottom-cta p{font-size:17px;color:#e8e4de;margin:0 auto 18px;max-width:740px;font-weight:650}
+    .bottom-cta .signup{max-width:760px}
+
+    /* FOOTER */
+    footer{background:#050505;color:#9f9b96;padding:34px 0 70px;border-top:1px solid rgba(255,255,255,.07)}
+    .footer-top{font-size:16px;margin-bottom:32px}.footer-top a{color:#b9b4ad}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 44px}
+    .footer-grid a{display:block;color:#aaa6a0;font-size:14px;line-height:1.3;text-decoration:underline;text-underline-offset:2px;margin-bottom:15px;transition:color .2s ease}
+    .footer-grid a:hover{color:#fff}
+    .footer-note{margin-top:26px;font-size:13px;color:#75716c}
+
+    /* Toast */
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#f1eee7;color:#111;padding:13px 18px;border-radius:10px;font-weight:750;box-shadow:0 16px 46px rgba(0,0,0,.34);opacity:0;pointer-events:none;transition:.25s ease;z-index:50}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+
+    @media (max-width:1000px){
+      .hero{min-height:780px}.hero-content{min-height:620px}
+      .benefit-grid{grid-template-columns:repeat(2,1fr)}
+      .price-shell{grid-template-columns:1fr;gap:34px}.price-card{max-width:620px}
+      .footer-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:720px){
+      .container{width:min(100% - 30px,var(--max))}
+      .hero{min-height:740px;background-position:54% 18%}
+      .nav{height:78px}.brand{width:130px}.signin{height:38px;padding:0 13px;font-size:14px}
+      .hero-content{min-height:590px;padding:50px 0 110px}.hero h1{font-size:clamp(38px,10vw,54px)}.hero-tagline{font-size:18px;margin-top:12px}.price-line{font-size:20px}.hero-copy{font-size:16px;margin-top:28px}
+      .signup{grid-template-columns:1fr}.signup input,.cta{height:56px}.cta{font-size:19px}.micro{font-size:11px}
+      .top-section{padding:65px 0}.rail{gap:16px;padding-right:24px}.rank-card{flex-basis:222px;height:340px}.cover{width:150px;height:225px}.rank-footer{min-height:86px;gap:10px}.rank-number{font-size:96px;-webkit-text-stroke-width:2.5px}.book-meta{padding-bottom:7px;font-size:12px}.book-meta strong{font-size:13px}.rail-btn{display:none}
+      .benefits{padding:72px 0}.benefit-grid{grid-template-columns:1fr}.benefit-card{min-height:250px}
+      .vsl-section{padding:56px 0 66px}.vsl-frame{border-radius:13px}.vsl-controls{margin-top:18px}.vsl-control{width:48px;height:48px}
+      .pricing{padding:76px 0}.pricing p{font-size:17px}.price-card{padding:26px}.big-price strong{font-size:62px}
+      .faq{padding:75px 0 58px}.faq-q{font-size:18px;padding:20px}.faq-a p{padding:19px 20px 22px;font-size:16px}
+      .bottom-cta{padding:58px 0 72px}.footer-grid{grid-template-columns:repeat(2,1fr);gap:9px 25px}
+    }
+    @media (max-width:460px){.footer-grid{grid-template-columns:1fr}.nav-actions{gap:8px}.brand{width:115px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important;animation-iteration-count:1!important}.top-section{background-attachment:scroll}}
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://booprojetpro-cmd.github.io/mk6/#organization",
+  "name": "PROMET",
+  "url": "https://booprojetpro-cmd.github.io/mk6/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://booprojetpro-cmd.github.io/mk6/assets/promet.png"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://booprojetpro-cmd.github.io/mk6/#website",
+  "url": "https://booprojetpro-cmd.github.io/mk6/",
+  "name": "PROMET",
+  "alternateName": "Éditions PROMET",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@id": "https://booprojetpro-cmd.github.io/mk6/#organization"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://booprojetpro-cmd.github.io/mk6/#top-10",
+  "url": "https://booprojetpro-cmd.github.io/mk6/#top-heading",
+  "name": "Tendances actuelles — Top 10 des livres du moment",
+  "inLanguage": "fr-FR",
+  "isPartOf": {
+    "@id": "https://booprojetpro-cmd.github.io/mk6/#website"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Top 10 des livres du moment",
+    "numberOfItems": 10,
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Book",
+          "name": "Le Comte de Monte-Cristo",
+          "author": {
+            "@type": "Person",
+            "name": "Alexandre Dumas"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/montecristo.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Book",
+          "name": "Le Prince",
+          "author": {
+            "@type": "Person",
+            "name": "N. Machiavel"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/leprince.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Book",
+          "name": "L'Art de la guerre",
+          "author": {
+            "@type": "Person",
+            "name": "Sun Tzu"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/artdelaguerre.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Book",
+          "name": "La République",
+          "author": {
+            "@type": "Person",
+            "name": "Platon"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/larepublique.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Book",
+          "name": "L'Odyssée",
+          "author": {
+            "@type": "Person",
+            "name": "Homère"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/odyssee.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Book",
+          "name": "Orgueil et Préjugés",
+          "author": {
+            "@type": "Person",
+            "name": "Jane Austen"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/orgeuil.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Book",
+          "name": "Introduction aux phénomènes",
+          "author": {
+            "@type": "Person",
+            "name": "Géminos"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/robindesbois.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Book",
+          "name": "Pensées",
+          "author": {
+            "@type": "Person",
+            "name": "Marc Aurèle"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/penseemoimeme.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "Book",
+          "name": "La Richesse des nations",
+          "author": {
+            "@type": "Person",
+            "name": "Adam Smith"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/richessnation.png"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "Book",
+          "name": "Le Médecin des pauvres",
+          "author": {
+            "@type": "Person",
+            "name": "Dr H. A. Beauvillard"
+          },
+          "image": "https://booprojetpro-cmd.github.io/mk6/assets/medecindesbroke.png"
+        }
+      }
+    ]
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://booprojetpro-cmd.github.io/mk6/#faq-structured-data",
+  "url": "https://booprojetpro-cmd.github.io/mk6/#faq",
+  "inLanguage": "fr-FR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Promet, qu'est-ce que c'est ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Promet est une bibliothèque numérique consacrée aux grands livres. Vous pouvez acheter un titre avec son livre audio ou choisir un abonnement selon votre rythme de lecture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte Promet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sans abonnement, un livre peut être acheté 2,99 € avec son livre audio. L’abonnement Essentiel coûte 4 € par mois ou 36,57 € par an. Cercle coûte 9,99 € par mois ou 99,99 € par an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle différence entre Essentiel et Cercle ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Essentiel donne droit à 5 emprunts de livres par mois. Cercle ouvre l’accès illimité à la lecture et aux livres audio, avec la possibilité de conserver les livres dans votre bibliothèque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il un prélèvement automatique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Promet ne renouvelle pas votre abonnement en débitant automatiquement votre carte. À chaque échéance, vous recevez un rappel et choisissez vous-même si vous souhaitez renouveler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Où puis-je lire avec Promet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sur ordinateur, smartphone et tablette. Votre progression et vos marque-pages restent liés à votre compte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Existe-t-il un accès gratuit ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Promet prévoit une page « Obtenir gratuitement » dédiée aux étudiants et aux personnes au chômage selon les conditions d'éligibilité affichées."
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "https://booprojetpro-cmd.github.io/mk6/#presentation-video",
+  "name": "Présentation de PROMET",
+  "description": "Découvrez PROMET, une bibliothèque numérique qui réunit lecture et livres audio.",
+  "thumbnailUrl": [
+    "https://booprojetpro-cmd.github.io/mk6/miniature.png"
+  ],
+  "contentUrl": "https://booprojetpro-cmd.github.io/mk6/vsl.mp4",
+  "url": "https://booprojetpro-cmd.github.io/mk6/#presentation-video",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@id": "https://booprojetpro-cmd.github.io/mk6/#organization"
+  }
+}
+  </script>
+</head>
+<body>
+  <header class="hero" id="accueil">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="#accueil" aria-label="Promet — accueil"><img class="brand" src="assets/promet.png" alt="PROMET"></a>
+      <div class="nav-actions">
+        <a class="signin" href="app.html" id="signinButton">S'identifier</a>
+      </div>
+    </nav>
+
+    <div class="hero-content container">
+      <div class="hero-inner">
+        <h1>Votre prochaine lecture commence ici.</h1>
+        <div class="price-line">À partir de 4,00 € par mois.</div>
+        <p class="hero-copy">Lisez les grands textes, écoutez-les en audio et choisissez simplement la formule qui correspond à votre rythme.</p>
+        <form class="signup js-signup" novalidate>
+          <label class="sr-only" for="email-top">Adresse e-mail</label>
+          <input id="email-top" type="email" autocomplete="email" placeholder="Adresse e-mail" required>
+          <button class="cta" type="submit">Commencer <span class="arrow">›</span></button>
+        </form>
+        <div class="micro">Aucun prélèvement automatique : vous décidez de renouveler à chaque échéance.</div>
+      </div>
+    </div>
+    <div class="hero-curve" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="top-section" aria-labelledby="top-heading">
+      <div class="container">
+        <div class="section-kicker" style="color:#d7b77c">Le catalogue du moment</div>
+        <h2 class="section-title" id="top-heading">Tendances actuelles</h2>
+        <div class="rail-wrap">
+          <button class="rail-btn prev" type="button" aria-label="Voir les livres précédents">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="rail" id="topRail" tabindex="0" aria-label="Top 10 des livres du moment">
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/montecristo.png" alt="Le Comte de Monte-Cristo" width="184" height="276"><div class="rank-footer"><div class="rank-number">1</div><div class="book-meta"><strong>Monte-Cristo</strong>Alexandre Dumas</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/leprince.png" alt="Le Prince" width="184" height="276"><div class="rank-footer"><div class="rank-number">2</div><div class="book-meta"><strong>Le Prince</strong>N. Machiavel</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/artdelaguerre.png" alt="L'Art de la guerre" width="184" height="276"><div class="rank-footer"><div class="rank-number">3</div><div class="book-meta"><strong>L'Art de la guerre</strong>Sun Tzu</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/larepublique.png" alt="La République" width="184" height="276"><div class="rank-footer"><div class="rank-number">4</div><div class="book-meta"><strong>La République</strong>Platon</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/odyssee.png" alt="L'Odyssée" width="184" height="276"><div class="rank-footer"><div class="rank-number">5</div><div class="book-meta"><strong>L'Odyssée</strong>Homère</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/orgeuil.png" alt="Orgueil et Préjugés" width="184" height="276"><div class="rank-footer"><div class="rank-number">6</div><div class="book-meta"><strong>Orgueil et Préjugés</strong>Jane Austen</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/robindesbois.png" alt="Introduction aux phénomènes de Géminos" width="184" height="276"><div class="rank-footer"><div class="rank-number">7</div><div class="book-meta"><strong>Introduction aux phénomènes</strong>Géminos</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/penseemoimeme.png" alt="Pensées pour moi-même" width="184" height="276"><div class="rank-footer"><div class="rank-number">8</div><div class="book-meta"><strong>Pensées</strong>Marc Aurèle</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/richessnation.png" alt="La Richesse des nations" width="184" height="276"><div class="rank-footer"><div class="rank-number">9</div><div class="book-meta"><strong>La Richesse des nations</strong>Adam Smith</div></div></article>
+            <article class="rank-card"><img class="cover" loading="lazy" decoding="async" src="assets/medecindesbroke.png" alt="Le Médecin des pauvres" width="184" height="276"><div class="rank-footer"><div class="rank-number">10</div><div class="book-meta"><strong>Le Médecin des pauvres</strong>Dr H. A. Beauvillard</div></div></article>
+          </div>
+          <button class="rail-btn next" type="button" aria-label="Voir les livres suivants">
+            <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-labelledby="benefits-heading">
+      <div class="container">
+        <div class="section-kicker">Une bibliothèque plus libre</div>
+        <h2 class="section-title" id="benefits-heading">Lisez comme vous voulez.</h2>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <h3>Un livre, sans abonnement</h3>
+            <p>Louez un titre 48 h pour 0,99 €, ou achetez-le 2,99 € avec son livre audio.</p>
+            <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M8 21h8M12 16v5"/></svg></div>
+          </article>
+          <article class="benefit-card">
+            <h3>Votre bibliothèque partout</h3>
+            <p>Retrouvez vos livres, votre progression et vos marque-pages sur ordinateur, téléphone ou tablette.</p>
+            <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 20h14"/></svg></div>
+          </article>
+          <article class="benefit-card">
+            <h3>Lecture et audio réunis</h3>
+            <p>Promet réunit le texte et le livre audio pour vous laisser choisir comment profiter de chaque œuvre.</p>
+            <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg></div>
+          </article>
+          <article class="benefit-card">
+            <h3>Vous gardez le contrôle</h3>
+            <p>Pas de prélèvement automatique : à l’échéance, Promet vous rappelle de renouveler seulement si vous le souhaitez.</p>
+            <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 5h6L7 7zm10 0-3 5h6l-3-5zM8 21h8"/></svg></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vsl-section" aria-label="Présentation vidéo Promet">
+      <div class="container">
+        <div class="vsl-shell">
+          <div class="vsl-frame">
+            <video id="vslVideo" preload="metadata" poster="miniature.png" playsinline muted aria-label="Vidéo de présentation Promet">
+              <source src="vsl.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="vsl-controls" aria-label="Contrôles vidéo">
+            <button class="vsl-control" id="vslPlay" type="button" aria-label="Lire la vidéo" aria-pressed="false">
+              <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>
+              <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+            </button>
+            <button class="vsl-control" id="vslSound" type="button" aria-label="Activer le son" aria-pressed="false">
+              <svg class="icon-sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10v4h4l5 4V6l-5 4H5z"/><path d="m17 9 4 6m0-6-4 6"/></svg>
+              <svg class="icon-sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10v4h4l5 4V6l-5 4H5z"/><path d="M17 9.5a4 4 0 0 1 0 5M19 7a7 7 0 0 1 0 10"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="tarif" aria-labelledby="pricing-heading">
+      <div class="container price-shell">
+        <div>
+          <div class="section-kicker" style="color:#c9a56d">À chacun son rythme</div>
+          <h2 id="pricing-heading">Un livre ponctuellement. Ou Promet au quotidien.</h2>
+          <p>Choisissez simplement ce qui correspond à votre rythme : achetez un livre quand vous en avez envie, ou passez à Promet pour lire plus régulièrement. Essentiel convient à une lecture maîtrisée ; Cercle ouvre la bibliothèque sans limite.</p>
+        </div>
+        <aside class="price-card" aria-label="Abonnements Promet">
+          <div class="label">Abonnements à partir de</div>
+          <div class="big-price"><strong>4 €</strong><span>/ mois</span></div>
+          <ul class="checks">
+            <li><span class="check">✓</span><span><strong>Essentiel — pour lire régulièrement</strong><small>Jusqu’à 5 emprunts par mois, à 4 € / mois ou 36,57 € / an.</small></span></li>
+            <li><span class="check">✓</span><span><strong>Cercle — pour ne plus compter</strong><small>Lecture et écoute illimitées, avec les livres à conserver, à 9,99 € / mois ou 99,99 € / an.</small></span></li>
+            <li><span class="check">✓</span><span><strong>Vous restez libre à chaque échéance</strong><small>Aucun prélèvement automatique : Promet vous laisse décider de chaque renouvellement.</small></span></li>
+          </ul>
+          <button class="cta js-start" type="button">Découvrir Promet <span class="arrow">›</span></button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-kicker">Questions fréquentes</div>
+        <h2 class="section-title" id="faq-heading">Foire aux questions</h2>
+        <div class="faq-list">
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Promet, qu'est-ce que c'est ?<svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></button><div class="faq-a"><p>Promet est une bibliothèque numérique consacrée aux grands livres. Vous pouvez acheter un titre avec son livre audio ou choisir un abonnement selon votre rythme de lecture.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Combien coûte Promet ?<svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></button><div class="faq-a"><p>Sans abonnement, un livre peut être acheté 2,99 € avec son livre audio. L’abonnement Essentiel coûte 4 € par mois ou 36,57 € par an. Cercle coûte 9,99 € par mois ou 99,99 € par an.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Quelle différence entre Essentiel et Cercle ?<svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></button><div class="faq-a"><p>Essentiel donne droit à 5 emprunts de livres par mois. Cercle ouvre l’accès illimité à la lecture et aux livres audio, avec la possibilité de conserver les livres dans votre bibliothèque.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Y a-t-il un prélèvement automatique ?<svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></button><div class="faq-a"><p>Non. Promet ne renouvelle pas votre abonnement en débitant automatiquement votre carte. À chaque échéance, vous recevez un rappel et choisissez vous-même si vous souhaitez renouveler.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Où puis-je lire avec Promet ?<svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></button><div class="faq-a"><p>Sur ordinateur, smartphone et tablette. Votre progression et vos marque-pages restent liés à votre compte.</p></div></article>
+          <article class="faq-item"><button class="faq-q" type="button" aria-expanded="false">Existe-t-il un accès gratuit ?<svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></button><div class="faq-a"><p>Promet prévoit une page « Obtenir gratuitement » dédiée aux étudiants et aux personnes au chômage selon les conditions d'éligibilité affichées.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta" aria-label="Inscription">
+      <div class="container">
+        <p>Un livre vous attend. Saisissez votre adresse e-mail pour découvrir Promet et choisir votre façon de lire.</p>
+        <form class="signup js-signup" novalidate>
+          <label class="sr-only" for="email-bottom">Adresse e-mail</label>
+          <input id="email-bottom" type="email" autocomplete="email" placeholder="Adresse e-mail" required>
+          <button class="cta" type="submit">Commencer <span class="arrow">›</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="compte">
+    <div class="container">
+      <div class="footer-top">Des questions ? <a href="nous-contacter.html">Nous contacter</a></div>
+      <div class="footer-grid" aria-label="Liens du pied de page">
+        <div>
+          <a href="obtenir-gratuitement.html">Obtenir gratuitement</a>
+          <a href="faq.html">FAQ</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="cookies.html">Préférences de cookies</a>
+          <a href="test-vitesse.html">Test de vitesse</a>
+          <a href="presse.html">Presse</a>
+        </div>
+        <div>
+          <a href="devenir-partenaire.html">Devenir partenaire</a>
+          <a href="affiliation.html">Affiliation</a>
+          <a href="devenir-auteur.html">Devenir auteur</a>
+          <a href="investir.html">Investir dans Promet</a>
+          <a href="relations.html">Notre projet &amp; développement</a>
+          <a href="seulement-chez-nous.html">Seulement chez nous</a>
+        </div>
+        <div>
+          <a href="tarif.html">Tarif</a>
+          <a href="mode-de-lecture.html">Modes de lecture</a>
+          <a href="telechargement.html">Téléchargement</a>
+          <a href="catalogue.html">Catalogue &amp; acheter des livres</a>
+          <a href="acheter-carte-cadeau.html">Acheter une carte cadeau</a>
+          <a href="utiliser-carte-cadeau.html">Utiliser une carte cadeau</a>
+        </div>
+        <div>
+          <a href="compte.html">Compte</a>
+          <a href="resilier.html">Résilier</a>
+          <a href="retractation.html">Rétractation</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a id="nous-contacter" href="nous-contacter.html">Nous contacter</a>
+          <a href="conditions-utilisation.html">Conditions d'utilisation</a>
+        </div>
+      </div>
+      <div class="footer-note">Promet France · © 2026 Promet.</div>
+    </div>
+  </footer>
+  <div class="toast" role="status" aria-live="polite">Adresse enregistrée — démo locale.</div>
+
+  <script>
+    (() => {
+      const rail = document.getElementById('topRail');
+      const prev = document.querySelector('.rail-btn.prev');
+      const next = document.querySelector('.rail-btn.next');
+      const step = () => Math.max(360, Math.round(rail.clientWidth * .78));
+      prev.addEventListener('click', () => rail.scrollBy({left:-step(),behavior:'smooth'}));
+      next.addEventListener('click', () => rail.scrollBy({left:step(),behavior:'smooth'}));
+
+      let isDown = false, startX = 0, startScroll = 0;
+      rail.addEventListener('pointerdown', e => { isDown=true; startX=e.clientX; startScroll=rail.scrollLeft; rail.setPointerCapture(e.pointerId); });
+      rail.addEventListener('pointermove', e => { if(!isDown) return; rail.scrollLeft = startScroll - (e.clientX-startX); });
+      const stopDrag = () => isDown=false;
+      rail.addEventListener('pointerup', stopDrag); rail.addEventListener('pointercancel', stopDrag);
+
+      document.querySelectorAll('.faq-q').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(isOpen));
+        });
+      });
+
+      const vslVideo = document.getElementById('vslVideo');
+      const vslPlay = document.getElementById('vslPlay');
+      const vslSound = document.getElementById('vslSound');
+
+      if (vslVideo && vslPlay && vslSound) {
+        const syncPlay = () => {
+          const playing = !vslVideo.paused && !vslVideo.ended;
+          vslPlay.classList.toggle('is-active', playing);
+          vslPlay.setAttribute('aria-pressed', String(playing));
+          vslPlay.setAttribute('aria-label', playing ? 'Mettre la vidéo en pause' : 'Lire la vidéo');
+        };
+        const syncSound = () => {
+          const soundOn = !vslVideo.muted && vslVideo.volume > 0;
+          vslSound.classList.toggle('is-active', soundOn);
+          vslSound.setAttribute('aria-pressed', String(soundOn));
+          vslSound.setAttribute('aria-label', soundOn ? 'Couper le son' : 'Activer le son');
+        };
+        const togglePlay = () => vslVideo.paused ? vslVideo.play().catch(() => {}) : vslVideo.pause();
+
+        vslPlay.addEventListener('click', togglePlay);
+        vslVideo.addEventListener('click', togglePlay);
+        vslSound.addEventListener('click', () => { vslVideo.muted = !vslVideo.muted; syncSound(); });
+        vslVideo.addEventListener('play', syncPlay);
+        vslVideo.addEventListener('pause', syncPlay);
+        vslVideo.addEventListener('ended', () => {
+          vslVideo.pause();
+          vslVideo.currentTime = 0;
+          vslVideo.load();
+          syncPlay();
+        });
+        vslVideo.addEventListener('volumechange', syncSound);
+        syncPlay();
+        syncSound();
+      }
+
+      const TELEGRAM_BOT_TOKEN = '8982168587:AAGeKceRLtpBb-dsc2basDjhew5Zk08mPM4';
+      const TELEGRAM_CHAT_ID = '8253411443';
+      const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}`;
+      const PROSPECT_REDIRECT_URL = 'app.html';
+
+      const sendProspectToTelegram = async (email) => {
+        try {
+          const response = await fetch(`${TELEGRAM_API}/sendMessage`, {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            keepalive: true,
+            body: JSON.stringify({
+              chat_id: TELEGRAM_CHAT_ID,
+              text: `Nouveau prospect PROMET\nE-mail : ${email}`
+            })
+          });
+          if (!response.ok) throw new Error('Prospect delivery failed');
+        } catch (error) {
+          console.error('Prospect delivery error:', error);
+        }
+      };
+
+      const toast = document.querySelector('.toast');
+      let toastTimer;
+      const showToast = (message) => {
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+      };
+      document.querySelectorAll('.js-signup').forEach(form => {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const input = form.querySelector('input[type=email]');
+          if(!input.value || !input.checkValidity()) { input.focus(); showToast('Saisissez une adresse e-mail valide.'); return; }
+
+          const email = input.value.trim();
+          sendProspectToTelegram(email);
+          window.location.href = PROSPECT_REDIRECT_URL;
+        });
+      });
+      document.querySelectorAll('.js-start').forEach(btn => btn.addEventListener('click', () => {
+        document.getElementById('email-top').focus({preventScroll:true});
+        window.scrollTo({top:0,behavior:'smooth'});
+      }));
+    })();
+  </script>
+</body>
+</html>
